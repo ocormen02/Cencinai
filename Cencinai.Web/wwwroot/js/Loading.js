@@ -1,0 +1,3 @@
+﻿function displayBusyIndicator() {
+    $('.loading').show();
+}

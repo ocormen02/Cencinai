@@ -1,8 +1,89 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Menú Principal";
 }
-
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<br />
+<ol class="breadcrumb">
+    <li class="breadcrumb-item active">Menú Principal</li>
+</ol>
+<h4>Elija una opción</h4>
+<hr />
+<div class="container">
+    <br /><br />
+    <div class="row">
+        <div class="col-lg-4">
+            <a class="box-link" asp-controller="Client" asp-action="ClientList" onclick="displayBusyIndicator()">
+                <div class="card border-primary mb-3" style="max-width: 20rem;">
+                    <div class="card-header"></div>
+                    <div class="card-body">
+                        <h4 class="card-title"><i class="fa fa-child"></i> Niños</h4>
+                        <p class="card-text">Administre la información de todos los niños.</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-4">
+            <a class="box-link" asp-controller="Responsable" asp-action="AgregarResponsable" onclick="displayBusyIndicator()">
+                <div class="card border-primary mb-3" style="max-width: 20rem;">
+                    <div class="card-header"></div>
+                    <div  class="card-body">
+                        <h4 class="card-title"><i class="fa fa-handshake-o"></i> Responsables</h4>
+                        <p class="card-text">Administre la información de todos los responsables.</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <hr /><br />
+    <div class="row">
+        <div class="col-lg-4">
+            <a class="box-link" asp-controller="Town" asp-action="TownList" onclick="displayBusyIndicator()">
+                <div class="card border-primary mb-3" style="max-width: 20rem;">
+                    <div class="card-header"></div>
+                    <div class="card-body">
+                        <h4 class="card-title"><i class="fa fa-level-up"></i> Nivel de Desarrollo</h4>
+                        <p class="card-text">Administre la información el nivel de desarrollo de los niños.</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-4">
+            <a class="box-link" asp-controller="Report" asp-action="Index" onclick="displayBusyIndicator()">
+                <div class="card border-primary mb-3" style="max-width: 20rem;">
+                    <div class="card-header"></div>
+                    <div class="card-body">
+                        <h4 class="card-title"><i class="fa fa-cutlery"></i> Estado Nutricional</h4>
+                        <p class="card-text">Administre la información el nivel de estado de nutrición de los niños.</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <hr /><br />
+    <div class="row">
+        <div class="col-lg-4">
+            <a class="box-link" asp-controller="Town" asp-action="TownList" onclick="displayBusyIndicator()">
+                <div class="card border-primary mb-3" style="max-width: 20rem;">
+                    <div class="card-header"></div>
+                    <div class="card-body">
+                        <h4 class="card-title"><i class="fa fa-files-o"></i> Reportes</h4>
+                        <p class="card-text">Genere los reportes necesarios para llevar la toma de decisiones. </p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-4">
+            <a class="box-link" asp-controller="Usuario" asp-action="ListarUsuarios" onclick="displayBusyIndicator()">
+                <div class="card border-primary mb-3" style="max-width: 20rem;">
+                    <div class="card-header"></div>
+                    <div class="card-body">
+                        <h4 class="card-title"><i class="fa fa-users"></i> Usuarios</h4>
+                        <p class="card-text">Genere, modifique y elimine usuarios para administrar el sistema </p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
 </div>
+
+
+

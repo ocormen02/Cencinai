@@ -273,7 +273,7 @@ namespace Cencinai.Data
             {
                 entity.Property(e => e.Contraseña)
                     .IsRequired()
-                    .HasMaxLength(8)
+                    .HasMaxLength(60)
                     .IsUnicode(false);
 
                 entity.Property(e => e.FechaActualizacion).HasColumnType("datetime");

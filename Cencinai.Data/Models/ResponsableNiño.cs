@@ -10,5 +10,6 @@ namespace Cencinai.Data.Models
 
         public virtual Niño Niño { get; set; }
         public virtual Responsable Responsable { get; set; }
+
     }
 }

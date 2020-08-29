@@ -1,0 +1,103 @@
+﻿@model Cencinai.Logic.Models.ResponsableModel
+
+@{
+    ViewData["Title"] = "Agregar Responsable";
+}
+
+<ol class="breadcrumb">
+    <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index" onclick="displayBusyIndicator()">Menú</a></li>
+    <li class="breadcrumb-item active">Agregar Responsable</li>
+</ol>
+<h4>Agregar Responsable</h4>
+<hr />
+
+<div class="container">
+    <form asp-action="AgregarResponsable">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="row">
+            <div class="col-4">
+                <div class="form-group">
+                    <label asp-for="Nombre" class="control-label"></label>
+                    <input asp-for="Nombre" type="text" class="form-control" id="Nombre" aria-describedby="Nombre" placeholder="Nombre" />
+                    <span asp-validation-for="Nombre" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="form-group">
+                    <label asp-for="PrimerApellido" class="control-label"></label>
+                    <input asp-for="PrimerApellido" type="text" class="form-control" id="PrimerApellido" aria-describedby="PrimerApellido" placeholder="Primer Apellido" />
+                    <span asp-validation-for="PrimerApellido" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <div class="form-group">
+                    <label asp-for="SegundoApellido" class="control-label"></label>
+                    <input asp-for="SegundoApellido" type="text" class="form-control" id="SegundoApellido" aria-describedby="SegundoApellido" placeholder="Segundo Apellido" />
+                    <span asp-validation-for="SegundoApellido" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="form-group">
+                    <label asp-for="Telefono" class="control-label"></label>
+                    <input asp-for="Telefono" type="text" class="form-control" id="Telefono" aria-describedby="Telefono" placeholder="Teléfono" />
+                    <span asp-validation-for="Telefono" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <div class="form-group">
+                    <label asp-for="TelefonoAdicional" class="control-label"></label>
+                    <input asp-for="TelefonoAdicional" type="text" class="form-control" id="TelefonoAdicional" aria-describedby="TelefonoAdicional" placeholder="Teléfono Adicional" />
+                    <span asp-validation-for="TelefonoAdicional" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <br />
+        <p>Datos de Dirección</p>
+        <br />
+        <div class="row">
+            <div class="col-4">
+                <div class="form-group">
+                    <label asp-for="Direccion.ProvinciaId" class="control-label"></label>
+                    <input asp-for="Direccion.ProvinciaId" type="text" class="form-control" id="Direccion.ProvinciaId" aria-describedby="Direccion.ProvinciaId" placeholder="Provincia" />
+                    <span asp-validation-for="Direccion.ProvinciaId" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="form-group">
+                    <label asp-for="Direccion.CantonId" class="control-label"></label>
+                    <input asp-for="Direccion.CantonId" type="text" class="form-control" id="Direccion.CantonId" aria-describedby="Direccion.CantonId" placeholder="Cantón" />
+                    <span asp-validation-for="Direccion.CantonId" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <div class="form-group">
+                    <label asp-for="Direccion.Distrito" class="control-label"></label>
+                    <input asp-for="Direccion.Distrito" type="text" class="form-control" id="Direccion.Distrito" aria-describedby="Direccion.Distrito" placeholder="Distrito" />
+                    <span asp-validation-for="Direccion.Distrito" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="form-group">
+                    <label asp-for="Direccion.DireccionExacta" class="control-label"></label>
+                    <textarea asp-for="Direccion.DireccionExacta" type="text" class="form-control" id="Direccion.DireccionExacta" aria-describedby="Direccion.DireccionExacta" placeholder="Dirección Exacta"></textarea>
+                    <span asp-validation-for="Direccion.DireccionExacta" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-1">
+                <a asp-action="ListarUsuarios" class="btn btn-danger" onclick="displayBusyIndicator()">Cancelar</a>
+            </div>
+            <div class="col-1">
+                <input type="submit" value="Registrar" class="btn btn-success" onclick="displayBusyUser()" />
+            </div>
+        </div>
+    </form>
+</div>

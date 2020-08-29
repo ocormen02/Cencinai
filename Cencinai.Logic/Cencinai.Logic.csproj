@@ -5,11 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Cencinai.Data\Cencinai.Data.csproj" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.0.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Repository\" />
+    <ProjectReference Include="..\Cencinai.Data\Cencinai.Data.csproj" />
   </ItemGroup>
 
 </Project>

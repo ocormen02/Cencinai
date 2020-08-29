@@ -1,0 +1,14 @@
+﻿.box-link:hover {
+    text-decoration: none;
+}
+
+.buttonPosition {
+    margin-top: 22px;
+}
+
+.page-info {
+    padding-top: 5px;
+    padding-left: 20px;
+    font-style: oblique;
+    font-size: 15px;
+}

@@ -1,0 +1,54 @@
+﻿@using Cencinai.Logic.Models;
+@model UsuarioModel
+
+@{
+    ViewData["Title"] = "Crear Usuario";
+}
+
+<ol class="breadcrumb">
+    <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index" onclick="displayBusyIndicator()">Menú</a></li>
+    <li class="breadcrumb-item"><a asp-controller="Usuario" asp-action="ListarUsuarios" onclick="displayBusyIndicator()">Usuarios</a></li>
+    <li class="breadcrumb-item active">Crear Usuario</li>
+</ol>
+<h4>Crear Usuario</h4>
+<hr />
+
+<div class="container">
+    <form asp-action="CrearUsuario">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="row">
+            <div class="col-4">
+                <div class="form-group">
+                    <label asp-for="Nombre" class="control-label"></label>
+                    <input asp-for="Nombre" type="text" class="form-control" id="Nombre" aria-describedby="Nombre" placeholder="Nombre" />
+                    <span asp-validation-for="Nombre" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="form-group">
+                    <label asp-for="NombreUsuario" class="control-label"></label>
+                    <input asp-for="NombreUsuario" type="text" class="form-control" id="NombreUsuario" aria-describedby="NombreUsuario" placeholder="Nombre Usuario" />
+                    <span asp-validation-for="NombreUsuario" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">           
+            <div class="col-4">
+                <div class="form-group">
+                    <label asp-for="Contraseña" class="control-label"></label>
+                    <input asp-for="Contraseña" type="text" class="form-control" id="Contraseña" aria-describedby="Contraseña" placeholder="Contraseña" />
+                    <span asp-validation-for="Contraseña" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-1">
+                <a asp-action="ListarUsuarios" class="btn btn-danger" onclick="displayBusyIndicator()">Cancelar</a>
+            </div>
+            <div class="col-1">
+                <input type="submit" value="Registrar" class="btn btn-success" onclick="displayBusyUser()" />
+            </div>
+        </div>
+    </form>
+</div>

@@ -82,13 +82,13 @@ namespace Cencinai.Logic.Repository
             PagedResult<UsuarioModel> usuarios = new PagedResult<UsuarioModel>();
             if (String.IsNullOrEmpty(filtro))
             {
-                var resultado = await unitOfWork.Usuario.GetAllPaged(pagina, 6, null, x => x.OrderBy(o => o.Nombre));
+                var resultado = await unitOfWork.Usuario.GetAllPaged(pagina, 10, null, x => x.OrderBy(o => o.Nombre));
                 
                 usuarios = mapper.Map<PagedResult<UsuarioModel>>(resultado);
             }
             else
             {
-                var resultado = await unitOfWork.Usuario.GetAllPaged(pagina, 6, (s => s.Nombre.Contains(filtro) ||
+                var resultado = await unitOfWork.Usuario.GetAllPaged(pagina, 10, (s => s.Nombre.Contains(filtro) ||
                 s.NombreUsuario.Contains(filtro)));
 
                 usuarios = mapper.Map<PagedResult<UsuarioModel>>(resultado);

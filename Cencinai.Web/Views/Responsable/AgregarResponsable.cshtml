@@ -56,31 +56,37 @@
             </div>
         </div>
         <br />
-        <p>Datos de Dirección</p>
+        <p><strong>Datos de Dirección</strong></p>
         <br />
         <div class="row">
             <div class="col-4">
                 <div class="form-group">
-                    <label asp-for="Direccion.ProvinciaId" class="control-label"></label>
-                    <input asp-for="Direccion.ProvinciaId" type="text" class="form-control" id="Direccion.ProvinciaId" aria-describedby="Direccion.ProvinciaId" placeholder="Provincia" />
+                    <label asp-for="Direccion.ProvinciaId" for="Direccion.ProvinciaId"></label>
+                    <select asp-for="Direccion.ProvinciaId" class="form-control" id="Direccion.ProvinciaId" aria-describedby="Direccion.ProvinciaId" asp-items="ViewBag.provincias">
+                        <option>Seleccione Provincia</option>
+                    </select>
                     <span asp-validation-for="Direccion.ProvinciaId" class="text-danger"></span>
                 </div>
             </div>
             <div class="col-4">
                 <div class="form-group">
-                    <label asp-for="Direccion.CantonId" class="control-label"></label>
-                    <input asp-for="Direccion.CantonId" type="text" class="form-control" id="Direccion.CantonId" aria-describedby="Direccion.CantonId" placeholder="Cantón" />
-                    <span asp-validation-for="Direccion.CantonId" class="text-danger"></span>
+                    <label asp-for="Direccion.CantonId" for="Direccion.CantonId"></label>
+                    <select asp-for="Direccion.CantonId" class="form-control" id="Direccion.CantonId" aria-describedby="Direccion.CantonId" asp-items="ViewBag.cantones">
+                        <option>Seleccione Cantón</option>
+                    </select>
+                    <span asp-validation-for="Direccion.ProvinciaId" class="text-danger"></span>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-4">
                 <div class="form-group">
-                    <label asp-for="Direccion.Distrito" class="control-label"></label>
-                    <input asp-for="Direccion.Distrito" type="text" class="form-control" id="Direccion.Distrito" aria-describedby="Direccion.Distrito" placeholder="Distrito" />
-                    <span asp-validation-for="Direccion.Distrito" class="text-danger"></span>
-                </div>
+                    <label asp-for="Direccion.DistritoId" for="Direccion.DistritoId"></label>
+                    <select asp-for="Direccion.DistritoId" class="form-control" id="Direccion.DistritoId" aria-describedby="Direccion.DistritoId" asp-items="ViewBag.distritos">
+                        <option>Seleccione Distrito</option>
+                    </select>
+                    <span asp-validation-for="Direccion.DistritoId" class="text-danger"></span>
+                </div>               
             </div>
             <div class="col-4">
                 <div class="form-group">

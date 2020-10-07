@@ -24,6 +24,7 @@ namespace Cencinai.Logic
             CreateMap<TallaEdad, TallaEdadModel>().ReverseMap();
             CreateMap<Usuario, UsuarioModel>().ReverseMap();
             CreateMap<PagedResult<Usuario>, PagedResult<UsuarioModel>>().ReverseMap();
+            CreateMap<PagedResult<Responsable>, PagedResult<ResponsableModel>>().ReverseMap();
         }
     }
 }

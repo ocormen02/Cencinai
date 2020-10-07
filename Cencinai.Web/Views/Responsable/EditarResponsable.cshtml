@@ -1,0 +1,12 @@
+﻿@using Cencinai.Logic.Models;
+@model ResponsableModel
+
+@{
+    ViewData["Title"] = "Editar Responsable";
+}
+
+<ol class="breadcrumb">
+    <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index" onclick="displayBusyIndicator()">Menú</a></li>
+    <li class="breadcrumb-item"><a asp-controller="Responsable" asp-action="ListarResponsables" onclick="displayBusyIndicator()">Responsables</a></li>
+    <li class="breadcrumb-item active">Editar Responsable</li>
+</ol>

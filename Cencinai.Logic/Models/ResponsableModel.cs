@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Text;
 
 namespace Cencinai.Logic.Models
 {
@@ -26,9 +24,15 @@ namespace Cencinai.Logic.Models
         [Display(Name = "Teléfono Adicional")]
         public string TelefonoAdicional { get; set; }
 
-        public int DireccionId { get; set; }
+        [Display(Name = "Distrito")]
+        public int DistritoId { get; set; }
 
-        public virtual DireccionModel Direccion { get; set; }
+        [Display(Name = "Dirección Exacta")]
+        public string DireccionExacta { get; set; }
+
+        public virtual DistritoModel Distrito { get; set; }
+
+        public virtual ICollection<NiñoModel> Niño { get; set; }
 
     }
 }

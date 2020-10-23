@@ -10,3 +10,102 @@
     <li class="breadcrumb-item"><a asp-controller="Responsable" asp-action="ListarResponsables" onclick="displayBusyIndicator()">Responsables</a></li>
     <li class="breadcrumb-item active">Editar Responsable</li>
 </ol>
+@Html.HiddenFor(Model => Model.Id)
+<h4>Editar Responsable</h4>
+<hr />
+<div class="container">
+    <form asp-action="EditarResponsable">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="row">
+            <div class="col-4">
+                <div class="form-group">
+                    <label asp-for="Nombre" class="control-label"></label>
+                    <input asp-for="Nombre" type="text" class="form-control" id="Nombre" placeholder="Nombre" />
+                    <span asp-validation-for="Nombre" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="form-group">
+                    <label asp-for="PrimerApellido" class="control-label"></label>
+                    <input asp-for="PrimerApellido" type="text" class="form-control" id="PrimerApellido" placeholder="Primer Apellido" />
+                    <span asp-validation-for="PrimerApellido" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <div class="form-group">
+                    <label asp-for="SegundoApellido" class="control-label"></label>
+                    <input asp-for="SegundoApellido" type="text" class="form-control" id="SegundoApellido" placeholder="Segundo Apellido" />
+                    <span asp-validation-for="SegundoApellido" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="form-group">
+                    <label asp-for="Telefono" class="control-label"></label>
+                    <input asp-for="Telefono" type="text" class="form-control" id="Telefono" placeholder="Teléfono" />
+                    <span asp-validation-for="Telefono" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <div class="form-group">
+                    <label asp-for="TelefonoAdicional" class="control-label"></label>
+                    <input asp-for="TelefonoAdicional" type="text" class="form-control" id="TelefonoAdicional" placeholder="Teléfono Adicional" />
+                    <span asp-validation-for="TelefonoAdicional" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <br />
+        <p><strong>Datos de Dirección</strong></p>
+        <br />
+        <div class="row">
+            <div class="col-4">
+                <div class="form-group">
+                    <label asp-for="Distrito.Canton.Provincia.Id" for="Distrito.Canton.Provincia.Id"></label>
+                    <select asp-for="Distrito.Canton.Provincia.Id" class="form-control" id="Distrito.Canton.Provincia.Id" asp-items="ViewBag.provincias">
+                        <option>Seleccione Provincia</option>
+                    </select>
+                    <span asp-validation-for="Distrito.Canton.Provincia.Id" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="form-group">
+                    <label asp-for="Distrito.Canton.Id" for="Distrito.Canton.Id"></label>
+                    <select asp-for="Distrito.Canton.Id" class="form-control" id="Distrito.Canton.Id" asp-items="ViewBag.cantones">
+                        <option>Seleccione Cantón</option>
+                    </select>
+                    <span asp-validation-for="Distrito.Canton.Id" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <div class="form-group">
+                    <label asp-for="DistritoId" for="Direccion.DistritoId"></label>
+                    <select asp-for="DistritoId" class="form-control" id="DistritoId" asp-items="ViewBag.distritos">
+                        <option>Seleccione Distrito</option>
+                    </select>
+                    <span asp-validation-for="DistritoId" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="form-group">
+                    <label asp-for="DireccionExacta" class="control-label"></label>
+                    <textarea asp-for="DireccionExacta" type="text" class="form-control" id="Direccion.DireccionExacta" placeholder="Dirección Exacta"></textarea>
+                    <span asp-validation-for="DireccionExacta" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-1">
+                <a asp-action="ListarResponsables" class="btn btn-danger" onclick="displayBusyIndicator()">Cancelar</a>
+            </div>
+            <div class="col-1">
+                <input type="submit" value="Guardar" class="btn btn-success" onclick="displayBusyUser()" />
+            </div>
+        </div>
+    </form>
+</div>

@@ -18,14 +18,14 @@
             <div class="col-4">
                 <div class="form-group">
                     <label asp-for="Nombre" class="control-label"></label>
-                    <input asp-for="Nombre" type="text" class="form-control" id="Nombre" aria-describedby="Nombre" placeholder="Nombre" />
+                    <input asp-for="Nombre" type="text" class="form-control" id="Nombre" placeholder="Nombre" />
                     <span asp-validation-for="Nombre" class="text-danger"></span>
                 </div>
             </div>
             <div class="col-4">
                 <div class="form-group">
                     <label asp-for="PrimerApellido" class="control-label"></label>
-                    <input asp-for="PrimerApellido" type="text" class="form-control" id="PrimerApellido" aria-describedby="PrimerApellido" placeholder="Primer Apellido" />
+                    <input asp-for="PrimerApellido" type="text" class="form-control" id="PrimerApellido" placeholder="Primer Apellido" />
                     <span asp-validation-for="PrimerApellido" class="text-danger"></span>
                 </div>
             </div>
@@ -34,14 +34,14 @@
             <div class="col-4">
                 <div class="form-group">
                     <label asp-for="SegundoApellido" class="control-label"></label>
-                    <input asp-for="SegundoApellido" type="text" class="form-control" id="SegundoApellido" aria-describedby="SegundoApellido" placeholder="Segundo Apellido" />
+                    <input asp-for="SegundoApellido" type="text" class="form-control" id="SegundoApellido" placeholder="Segundo Apellido" />
                     <span asp-validation-for="SegundoApellido" class="text-danger"></span>
                 </div>
             </div>
             <div class="col-4">
                 <div class="form-group">
                     <label asp-for="Telefono" class="control-label"></label>
-                    <input asp-for="Telefono" type="text" class="form-control" id="Telefono" aria-describedby="Telefono" placeholder="Teléfono" />
+                    <input asp-for="Telefono" type="text" class="form-control" id="Telefono" placeholder="Teléfono" />
                     <span asp-validation-for="Telefono" class="text-danger"></span>
                 </div>
             </div>
@@ -50,7 +50,7 @@
             <div class="col-4">
                 <div class="form-group">
                     <label asp-for="TelefonoAdicional" class="control-label"></label>
-                    <input asp-for="TelefonoAdicional" type="text" class="form-control" id="TelefonoAdicional" aria-describedby="TelefonoAdicional" placeholder="Teléfono Adicional" />
+                    <input asp-for="TelefonoAdicional" type="text" class="form-control" id="TelefonoAdicional" placeholder="Teléfono Adicional" />
                     <span asp-validation-for="TelefonoAdicional" class="text-danger"></span>
                 </div>
             </div>
@@ -61,45 +61,45 @@
         <div class="row">
             <div class="col-4">
                 <div class="form-group">
-                    <label asp-for="Direccion.ProvinciaId" for="Direccion.ProvinciaId"></label>
-                    <select asp-for="Direccion.ProvinciaId" class="form-control" id="Direccion.ProvinciaId" aria-describedby="Direccion.ProvinciaId" asp-items="ViewBag.provincias">
+                    <label asp-for="Distrito.Canton.Provincia.Id" for="Distrito.Canton.Provincia.Id"></label>
+                    <select class="form-control" id="Distrito.Canton.Provincia.Id" asp-items="ViewBag.provincias">
                         <option>Seleccione Provincia</option>
                     </select>
-                    <span asp-validation-for="Direccion.ProvinciaId" class="text-danger"></span>
+                    <span asp-validation-for="Distrito.Canton.Provincia.Id" class="text-danger"></span>
                 </div>
             </div>
             <div class="col-4">
                 <div class="form-group">
-                    <label asp-for="Direccion.CantonId" for="Direccion.CantonId"></label>
-                    <select asp-for="Direccion.CantonId" class="form-control" id="Direccion.CantonId" aria-describedby="Direccion.CantonId" asp-items="ViewBag.cantones">
+                    <label asp-for="Distrito.Canton.Id" for="Distrito.Canton.Id"></label>
+                    <select class="form-control" id="Distrito.Canton.Id" asp-items="ViewBag.cantones">
                         <option>Seleccione Cantón</option>
                     </select>
-                    <span asp-validation-for="Direccion.ProvinciaId" class="text-danger"></span>
+                    <span asp-validation-for="Distrito.Canton.Id" class="text-danger"></span>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-4">
                 <div class="form-group">
-                    <label asp-for="Direccion.DistritoId" for="Direccion.DistritoId"></label>
-                    <select asp-for="Direccion.DistritoId" class="form-control" id="Direccion.DistritoId" aria-describedby="Direccion.DistritoId" asp-items="ViewBag.distritos">
+                    <label asp-for="DistritoId" for="DistritoId"></label>
+                    <select asp-for="DistritoId" class="form-control" id="DistritoId" asp-items="ViewBag.distritos">
                         <option>Seleccione Distrito</option>
                     </select>
-                    <span asp-validation-for="Direccion.DistritoId" class="text-danger"></span>
+                    <span asp-validation-for="DistritoId" class="text-danger"></span>
                 </div>               
             </div>
             <div class="col-4">
                 <div class="form-group">
-                    <label asp-for="Direccion.DireccionExacta" class="control-label"></label>
-                    <textarea asp-for="Direccion.DireccionExacta" type="text" class="form-control" id="Direccion.DireccionExacta" aria-describedby="Direccion.DireccionExacta" placeholder="Dirección Exacta"></textarea>
-                    <span asp-validation-for="Direccion.DireccionExacta" class="text-danger"></span>
+                    <label asp-for="DireccionExacta" class="control-label"></label>
+                    <textarea asp-for="DireccionExacta" type="text" class="form-control" id="DireccionExacta" placeholder="Dirección Exacta"></textarea>
+                    <span asp-validation-for="DireccionExacta" class="text-danger"></span>
                 </div>
             </div>
         </div>
         <br />
         <div class="row">
             <div class="col-1">
-                <a asp-action="ListarUsuarios" class="btn btn-danger" onclick="displayBusyIndicator()">Cancelar</a>
+                <a asp-action="ListarResponsables" class="btn btn-danger" onclick="displayBusyIndicator()">Cancelar</a>
             </div>
             <div class="col-1">
                 <input type="submit" value="Registrar" class="btn btn-success" onclick="displayBusyUser()" />

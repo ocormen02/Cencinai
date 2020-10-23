@@ -13,8 +13,6 @@ namespace Cencinai.Data.UnitOfWork
 
         ICategoriaRepository Categoria { get; }
 
-        IDireccionRepository Direccion { get; }
-
         IDistritoRepository Distrito { get; }
 
         IIndiceMasaCorporalRepository IndiceMasaCorporal { get; }
@@ -30,8 +28,6 @@ namespace Cencinai.Data.UnitOfWork
         IPuntuacionAreaDesarrolloRepository PuntuacionAreaDesarrollo { get; }
 
         IResponsableRepository Responsable { get; }
-
-        IResponsableNiñoRepository ResponsableNiño { get; }
 
         ITallaEdadRepository TallaEdad { get; }
 

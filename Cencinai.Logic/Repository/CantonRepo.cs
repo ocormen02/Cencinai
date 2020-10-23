@@ -25,10 +25,11 @@ namespace Cencinai.Logic.Repository
         }
         #endregion Constructor
 
-        public async Task<IEnumerable<CantonModel>> ObtenerCantones()
+        public async Task<IEnumerable<CantonModel>> ObtenerCantones(int provinciaId)
         {
             var resultado = await unitOfWork.Canton.GetAll(
-                null, x => x.OrderBy(o => o.Nombre));
+                p => p.ProvinciaId == provinciaId, 
+                x => x.OrderBy(o => o.Nombre));
 
             return mapper.Map<IEnumerable<CantonModel>>(resultado);
         }

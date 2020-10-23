@@ -31,15 +31,8 @@ namespace Cencinai.Logic.Repository
         public void AgregarResponsable(ResponsableModel responsable)
         {
             var entidadResponsable = mapper.Map<Responsable>(responsable);
-            entidadResponsable.FechaCreacion = DateTime.Now;
-            entidadResponsable.FechaActualizacion = DateTime.Now;
-            entidadResponsable.Direccion.FechaCreacion = DateTime.Now;
-            entidadResponsable.Direccion.FechaActualizacion = DateTime.Now;
-            unitOfWork.Direccion.Add(entidadResponsable.Direccion);
-            unitOfWork.Complete();
-            entidadResponsable.DireccionId = entidadResponsable.Direccion.Id;
-            unitOfWork.Responsable.Add(entidadResponsable);
 
+            unitOfWork.Responsable.Add(entidadResponsable);
             unitOfWork.Complete();
         }
 
@@ -53,23 +46,19 @@ namespace Cencinai.Logic.Repository
 
         public void EditarResponsable(ResponsableModel responsable)
         {
-            var responsableBD = ObtenerResponsablePorId(responsable.Id).Result;
-
-            responsable.FechaCreacion = responsableBD.FechaCreacion;
-            responsable.FechaActualizacion = DateTime.Now;
-
             var entidadResponsable = mapper.Map<Responsable>(responsable);
-            unitOfWork.Responsable.Update(entidadResponsable);
+            entidadResponsable.Distrito = null;
 
+            unitOfWork.Responsable.Update(entidadResponsable);
             unitOfWork.Complete();
         }
 
         public async Task<ResponsableModel> ObtenerResponsablePorId(int id)
         {
             var responsable = await unitOfWork.Responsable.GetOne(
-                x => x.Id == id, 
-                CrearDireccionInclude(), CrearProvinciaInclude(), 
-                CrearCantonInclude(), CrearDistritoInclude());
+                x => x.Id == id,
+                CrearDistritoInclude(), CrearProvinciaInclude(), 
+                CrearCantonInclude());
 
             return mapper.Map<ResponsableModel>(responsable);
         }
@@ -80,7 +69,7 @@ namespace Cencinai.Logic.Repository
             if (String.IsNullOrEmpty(filtro))
             {
                 var resultado = await unitOfWork.Responsable.GetAllPaged(pagina, 10, null, x => x.OrderBy(o => o.Nombre),
-                    CrearDireccionInclude(), CrearProvinciaInclude(), CrearCantonInclude(), CrearDistritoInclude());
+                    CrearDistritoInclude(), CrearProvinciaInclude(), CrearCantonInclude());
 
                 responsables = mapper.Map<PagedResult<ResponsableModel>>(resultado);
             }
@@ -96,24 +85,19 @@ namespace Cencinai.Logic.Repository
         }
 
         #region Includes
-        public Func<IQueryable<Responsable>, IIncludableQueryable<Responsable, object>> CrearDireccionInclude()
+        public Func<IQueryable<Responsable>, IIncludableQueryable<Responsable, object>> CrearDistritoInclude()
         {
-            return direccion => direccion.Include(x => x.Direccion);
-        }
-
-        public Func<IQueryable<Responsable>, IIncludableQueryable<Responsable, object>> CrearProvinciaInclude()
-        {
-            return provincia => provincia.Include(x => x.Direccion.Provincia);
+            return direccion => direccion.Include(x => x.Distrito);
         }
 
         public Func<IQueryable<Responsable>, IIncludableQueryable<Responsable, object>> CrearCantonInclude()
         {
-            return canton => canton.Include(x => x.Direccion.Canton);
+            return canton => canton.Include(x => x.Distrito.Canton);
         }
 
-        public Func<IQueryable<Responsable>, IIncludableQueryable<Responsable, object>> CrearDistritoInclude()
+        public Func<IQueryable<Responsable>, IIncludableQueryable<Responsable, object>> CrearProvinciaInclude()
         {
-            return distrito => distrito.Include(x => x.Direccion.Distrito);
+            return provincia => provincia.Include(x => x.Distrito.Canton.Provincia);
         }
         #endregion
     }

@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Text;
 
 namespace Cencinai.Logic.Models
 {
@@ -22,5 +20,9 @@ namespace Cencinai.Logic.Models
 
         [Display(Name = "Bajo Peso Severo")]
         public bool? BajoPesoSevero { get; set; }
+
+        public DateTime FechaCreacion { get; set; }
+
+        public DateTime FechaActualizacion { get; set; }
     }
 }

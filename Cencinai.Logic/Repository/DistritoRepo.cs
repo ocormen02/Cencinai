@@ -25,10 +25,11 @@ namespace Cencinai.Logic.Repository
         }
         #endregion Constructor
 
-        public async Task<IEnumerable<DistritoModel>> ObtenerDistritos()
+        public async Task<IEnumerable<DistritoModel>> ObtenerDistritos(int cantonId)
         {
             var resultado = await unitOfWork.Distrito.GetAll(
-                null, x => x.OrderBy(o => o.Nombre));
+                c => c.CantonId == cantonId, 
+                x => x.OrderBy(o => o.Nombre));
 
             return mapper.Map<IEnumerable<DistritoModel>>(resultado);
         }

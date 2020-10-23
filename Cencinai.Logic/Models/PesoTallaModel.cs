@@ -1,8 +1,5 @@
-﻿using Cencinai.Data.Models;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.ComponentModel.DataAnnotations;
-using System.Text;
 
 namespace Cencinai.Logic.Models
 {
@@ -25,5 +22,9 @@ namespace Cencinai.Logic.Models
 
         [Display(Name = "Desnutrición Severa")]
         public bool? DesnutricionSevera { get; set; }
+
+        public DateTime FechaCreacion { get; set; }
+
+        public DateTime FechaActualizacion { get; set; }
     }
 }

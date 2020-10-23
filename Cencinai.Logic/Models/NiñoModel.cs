@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Text;
 
 namespace Cencinai.Logic.Models
 {
@@ -28,5 +26,11 @@ namespace Cencinai.Logic.Models
         public string InformacionAdicional { get; set; }
 
         public int CategoryId { get; set; }
+
+        public int ResponsableId { get; set; }
+
+        public virtual CategoriaModel Category { get; set; }
+
+        public virtual ResponsableModel Responsable { get; set; }
     }
 }

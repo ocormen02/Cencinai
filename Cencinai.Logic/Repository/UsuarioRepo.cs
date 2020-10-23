@@ -29,8 +29,6 @@ namespace Cencinai.Logic.Repository
         public void AgregarUsuario(UsuarioModel usuario)
         {
             var entidadUsuario = mapper.Map<Usuario>(usuario);
-            entidadUsuario.FechaCreacion = DateTime.Now;
-            entidadUsuario.FechaActualizacion = DateTime.Now;
             unitOfWork.Usuario.Add(entidadUsuario);
             
             unitOfWork.Complete();
@@ -53,8 +51,6 @@ namespace Cencinai.Logic.Repository
                 var password = EncryptHelper.GetHashPassword(usuario.Contraseña);
                 usuario.Contraseña = password;
             }
-            usuario.FechaCreacion = usuarioBD.FechaCreacion;
-            usuario.FechaActualizacion = DateTime.Now;
 
             var entidadUsuario = mapper.Map<Usuario>(usuario);
             unitOfWork.Usuario.Update(entidadUsuario);

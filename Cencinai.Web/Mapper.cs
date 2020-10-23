@@ -9,12 +9,10 @@ namespace Cencinai.Logic
         public Mapper()
         {
             CreateMap<AreasDesarrollo, AreasDesarrolloModel>().ReverseMap();
-            CreateMap<Base, BaseModel>().ReverseMap();
             CreateMap<Canton, CantonModel>().ReverseMap();
             CreateMap<Provincia, ProvinciaModel>().ReverseMap();
             CreateMap<Distrito, DistritoModel>().ReverseMap();
             CreateMap<Categoria, CategoriaModel>().ReverseMap();
-            CreateMap<Direccion, DireccionModel>().ReverseMap();
             CreateMap<IndiceMasaCorporal, IndiceMasaCorporalModel>().ReverseMap();
             CreateMap<Niño, NiñoModel>().ReverseMap();
             CreateMap<PesoEdad, PesoEdadModel>().ReverseMap();

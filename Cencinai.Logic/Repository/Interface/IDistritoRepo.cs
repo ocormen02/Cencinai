@@ -8,6 +8,6 @@ namespace Cencinai.Logic.Repository.Interface
 {
     public interface IDistritoRepo
     {
-        Task<IEnumerable<DistritoModel>> ObtenerDistritos();
+        Task<IEnumerable<DistritoModel>> ObtenerDistritos(int cantonId);
     }
 }

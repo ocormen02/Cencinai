@@ -52,8 +52,8 @@ namespace Cencinai.Web.Controllers
             try
             {
                 var provincias = provinciaRepo.ObtenerProvincias().Result;
-                var cantones = cantonRepo.ObtenerCantones().Result;
-                var distritos = distritoRepo.ObtenerDistritos().Result;
+                var cantones = cantonRepo.ObtenerCantones(2).Result;
+                var distritos = distritoRepo.ObtenerDistritos(4).Result;
 
                 ViewBag.provincias = SelectListHelper.ObtenerListaProvincia(provincias);
                 ViewBag.cantones = SelectListHelper.ObtenerListaCanton(cantones);
@@ -86,7 +86,7 @@ namespace Cencinai.Web.Controllers
                     return View();
                 }
             }
-            catch
+            catch(Exception ex)
             {
                 return RedirectToAction("Error", "Error");
             }
@@ -111,6 +111,13 @@ namespace Cencinai.Web.Controllers
             try
             {
                 var responsable = responsableRepo.ObtenerResponsablePorId(id).Result;
+                var provincias = provinciaRepo.ObtenerProvincias().Result;
+                var cantones = cantonRepo.ObtenerCantones(2).Result;
+                var distritos = distritoRepo.ObtenerDistritos(4).Result;
+
+                ViewBag.provincias = SelectListHelper.ObtenerListaProvincia(provincias);
+                ViewBag.cantones = SelectListHelper.ObtenerListaCanton(cantones);
+                ViewBag.distritos = SelectListHelper.ObtenerListaDistrito(distritos);
 
                 return View(responsable);
             }
@@ -131,7 +138,7 @@ namespace Cencinai.Web.Controllers
 
                 return RedirectToAction("ListarResponsables");
             }
-            catch
+            catch(Exception ex)
             {
                 return RedirectToAction("Error", "Error");
             }

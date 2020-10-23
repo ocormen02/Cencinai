@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Text;
 
 namespace Cencinai.Logic.Models
 {
@@ -27,5 +25,9 @@ namespace Cencinai.Logic.Models
         public int? Habitos { get; set; }
 
         public int NiñoId { get; set; }
+
+        public DateTime FechaCreacion { get; set; }
+
+        public DateTime FechaActualizacion { get; set; }
     }
 }

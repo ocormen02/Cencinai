@@ -8,6 +8,6 @@ namespace Cencinai.Logic.Repository.Interface
 {
     public interface ICantonRepo
     {
-        Task<IEnumerable<CantonModel>> ObtenerCantones();
+        Task<IEnumerable<CantonModel>> ObtenerCantones(int provinciaId);
     }
 }

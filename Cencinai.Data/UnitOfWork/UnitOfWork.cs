@@ -16,8 +16,6 @@ namespace Cencinai.Data.UnitOfWork
 
         public ICategoriaRepository Categoria { get; private set; }
 
-        public IDireccionRepository Direccion { get; private set; }
-
         public IDistritoRepository Distrito { get; private set; }
 
         public IIndiceMasaCorporalRepository IndiceMasaCorporal { get; private set; }
@@ -34,8 +32,6 @@ namespace Cencinai.Data.UnitOfWork
 
         public IResponsableRepository Responsable { get; private set; }
 
-        public IResponsableNiñoRepository ResponsableNiño { get; private set; }
-
         public ITallaEdadRepository TallaEdad { get; private set; }
 
         public UnitOfWork(CencinaiContext _context)
@@ -46,7 +42,6 @@ namespace Cencinai.Data.UnitOfWork
             AreasDesarrollo = new AreasDesarrolloRepository(context);
             Canton = new CantonRepository(context);
             Categoria = new CategoriaRepository(context);
-            Direccion = new DireccionRepository(context);
             Distrito = new DistritoRepository(context);
             IndiceMasaCorporal = new IndiceMasaCorporalRepository(context);
             Niño = new NiñoRepository(context);
@@ -55,7 +50,6 @@ namespace Cencinai.Data.UnitOfWork
             Provincia = new ProvinciaRepository(context);
             PuntuacionAreaDesarrollo = new PuntuacionAreaDesarrolloRepository(context);
             Responsable = new ResponsableRepository(context);
-            ResponsableNiño = new ResponsableNiñoRepository(context);
             TallaEdad = new TallaEdadRepository(context);
         }
 

@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using Cencinai.Data.Models;
 using Cencinai.Data.UnitOfWork;
 using Cencinai.Logic.Models;
 using Cencinai.Logic.Repository.Interface;

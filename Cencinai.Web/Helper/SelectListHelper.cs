@@ -65,5 +65,43 @@ namespace Cencinai.Web.Helper
 
             return selectList;
         }
+
+        public static List<SelectListItem> ObtenerListaResponsables(IEnumerable<ResponsableModel> responsables)
+        {
+            List<SelectListItem> selectList = new List<SelectListItem>();
+
+            if (responsables != null)
+            {
+                foreach (var item in responsables)
+                {
+                    selectList.Add(new SelectListItem
+                    {
+                        Text = $"{item.Nombre} {item.PrimerApellido} {item.SegundoApellido}",
+                        Value = item.Id.ToString()
+                    });
+                }
+            }
+
+            return selectList;
+        }
+
+        public static List<SelectListItem> ObtenerListaCategorias(IEnumerable<CategoriaModel> categorias)
+        {
+            List<SelectListItem> selectList = new List<SelectListItem>();
+
+            if (categorias != null)
+            {
+                foreach (var item in categorias)
+                {
+                    selectList.Add(new SelectListItem
+                    {
+                        Text = item.Abreviatura,
+                        Value = item.Id.ToString()
+                    });
+                }
+            }
+
+            return selectList;
+        }
     }
 }

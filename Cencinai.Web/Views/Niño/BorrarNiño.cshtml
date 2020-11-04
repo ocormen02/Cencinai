@@ -1,0 +1,52 @@
+﻿@using Cencinai.Logic.Models; 
+@model NiñoModel
+
+@{
+    ViewData["Title"] = "Eliminar Niño";
+}
+
+@Html.HiddenFor(model => model.Id)
+
+<ol class="breadcrumb">
+    <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index" onclick="displayBusyIndicator()">Menú</a></li>
+    <li class="breadcrumb-item"><a asp-controller="Niño" asp-action="ListarNiños" onclick="displayBusyIndicator()">Niños</a></li>
+    <li class="breadcrumb-item active">Eliminar Niño</li>
+</ol>
+<h4>Eliminar Niño</h4>
+<hr />
+
+<h5>¿Está seguro que quiere eliminar el niño?</h5>
+<br />
+<div class="container">
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PrimerApellido)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PrimerApellido)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SegundoApellido)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SegundoApellido)
+        </dd>
+    </dl>
+    <br />
+    <form asp-action="BorrarNiño">
+        <div class="row">
+            <div class="col-1">
+                <a asp-action="ListarNiños" class="btn btn-info" onclick="displayBusyIndicator()">No</a>
+            </div>
+            <div class="col-1">
+                <input type="submit" value="Sí" class="btn btn-danger" onclick="displayBusyIndicator()" />
+            </div>
+        </div>
+    </form>
+</div>

@@ -32,6 +32,10 @@ namespace Cencinai.Data
         {
             modelBuilder.Entity<AreasDesarrollo>(entity =>
             {
+                entity.Property(e => e.FechaActualizacion).HasColumnType("datetime");
+
+                entity.Property(e => e.FechaCreacion).HasColumnType("datetime");
+
                 entity.HasOne(d => d.Niño)
                     .WithMany(p => p.AreasDesarrollo)
                     .HasForeignKey(d => d.NiñoId)
@@ -40,7 +44,9 @@ namespace Cencinai.Data
 
             modelBuilder.Entity<Canton>(entity =>
             {
-                entity.Property(e => e.Nombre).IsUnicode(false);
+                entity.Property(e => e.Nombre)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
 
                 entity.HasOne(d => d.Provincia)
                     .WithMany(p => p.Canton)
@@ -50,14 +56,23 @@ namespace Cencinai.Data
 
             modelBuilder.Entity<Categoria>(entity =>
             {
-                entity.Property(e => e.Abreviatura).IsUnicode(false);
+                entity.Property(e => e.Abreviatura)
+                    .IsRequired()
+                    .HasMaxLength(10)
+                    .IsUnicode(false);
 
-                entity.Property(e => e.Nombre).IsUnicode(false);
+                entity.Property(e => e.Nombre)
+                    .IsRequired()
+                    .HasMaxLength(20)
+                    .IsUnicode(false);
             });
 
             modelBuilder.Entity<Distrito>(entity =>
             {
-                entity.Property(e => e.Nombre).IsUnicode(false);
+                entity.Property(e => e.Nombre)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
 
                 entity.HasOne(d => d.Canton)
                     .WithMany(p => p.Distrito)
@@ -67,6 +82,10 @@ namespace Cencinai.Data
 
             modelBuilder.Entity<IndiceMasaCorporal>(entity =>
             {
+                entity.Property(e => e.FechaActualizacion).HasColumnType("datetime");
+
+                entity.Property(e => e.FechaCreacion).HasColumnType("datetime");
+
                 entity.HasOne(d => d.Niño)
                     .WithMany(p => p.IndiceMasaCorporal)
                     .HasForeignKey(d => d.NiñoId)
@@ -75,17 +94,27 @@ namespace Cencinai.Data
 
             modelBuilder.Entity<Niño>(entity =>
             {
+                entity.Property(e => e.FechaNacimiento).HasColumnType("date");
+
                 entity.Property(e => e.InformacionAdicional).IsUnicode(false);
 
-                entity.Property(e => e.Nombre).IsUnicode(false);
+                entity.Property(e => e.Nombre)
+                    .IsRequired()
+                    .HasMaxLength(20)
+                    .IsUnicode(false);
 
-                entity.Property(e => e.PrimerApellido).IsUnicode(false);
+                entity.Property(e => e.PrimerApellido)
+                    .IsRequired()
+                    .HasMaxLength(20)
+                    .IsUnicode(false);
 
-                entity.Property(e => e.SegundoApellido).IsUnicode(false);
+                entity.Property(e => e.SegundoApellido)
+                    .HasMaxLength(20)
+                    .IsUnicode(false);
 
-                entity.HasOne(d => d.Category)
+                entity.HasOne(d => d.Categoria)
                     .WithMany(p => p.Niño)
-                    .HasForeignKey(d => d.CategoryId)
+                    .HasForeignKey(d => d.CategoriaId)
                     .HasConstraintName("FK_Niño_Categoria");
 
                 entity.HasOne(d => d.Responsable)
@@ -97,6 +126,10 @@ namespace Cencinai.Data
 
             modelBuilder.Entity<PesoEdad>(entity =>
             {
+                entity.Property(e => e.FechaActualizacion).HasColumnType("datetime");
+
+                entity.Property(e => e.FechaCreacion).HasColumnType("datetime");
+
                 entity.HasOne(d => d.Niño)
                     .WithMany(p => p.PesoEdad)
                     .HasForeignKey(d => d.NiñoId)
@@ -105,6 +138,10 @@ namespace Cencinai.Data
 
             modelBuilder.Entity<PesoTalla>(entity =>
             {
+                entity.Property(e => e.FechaActualizacion).HasColumnType("datetime");
+
+                entity.Property(e => e.FechaCreacion).HasColumnType("datetime");
+
                 entity.HasOne(d => d.Niño)
                     .WithMany(p => p.PesoTalla)
                     .HasForeignKey(d => d.NiñoId)
@@ -113,11 +150,18 @@ namespace Cencinai.Data
 
             modelBuilder.Entity<Provincia>(entity =>
             {
-                entity.Property(e => e.Nombre).IsUnicode(false);
+                entity.Property(e => e.Nombre)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
             });
 
             modelBuilder.Entity<PuntuacionAreaDesarrollo>(entity =>
             {
+                entity.Property(e => e.FechaActualizacion).HasColumnType("datetime");
+
+                entity.Property(e => e.FechaCreacion).HasColumnType("datetime");
+
                 entity.HasOne(d => d.Niño)
                     .WithMany(p => p.PuntuacionAreaDesarrollo)
                     .HasForeignKey(d => d.NiñoId)
@@ -126,17 +170,33 @@ namespace Cencinai.Data
 
             modelBuilder.Entity<Responsable>(entity =>
             {
-                entity.Property(e => e.DireccionExacta).IsUnicode(false);
+                entity.Property(e => e.DireccionExacta)
+                    .IsRequired()
+                    .HasMaxLength(200)
+                    .IsUnicode(false);
 
-                entity.Property(e => e.Nombre).IsUnicode(false);
+                entity.Property(e => e.Nombre)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
 
-                entity.Property(e => e.PrimerApellido).IsUnicode(false);
+                entity.Property(e => e.PrimerApellido)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
 
-                entity.Property(e => e.SegundoApellido).IsUnicode(false);
+                entity.Property(e => e.SegundoApellido)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
 
-                entity.Property(e => e.Telefono).IsUnicode(false);
+                entity.Property(e => e.Telefono)
+                    .IsRequired()
+                    .HasMaxLength(10)
+                    .IsUnicode(false);
 
-                entity.Property(e => e.TelefonoAdicional).IsUnicode(false);
+                entity.Property(e => e.TelefonoAdicional)
+                    .HasMaxLength(10)
+                    .IsUnicode(false);
 
                 entity.HasOne(d => d.Distrito)
                     .WithMany(p => p.Responsable)
@@ -146,6 +206,10 @@ namespace Cencinai.Data
 
             modelBuilder.Entity<TallaEdad>(entity =>
             {
+                entity.Property(e => e.FechaActualizacion).HasColumnType("datetime");
+
+                entity.Property(e => e.FechaCreacion).HasColumnType("datetime");
+
                 entity.HasOne(d => d.Niño)
                     .WithMany(p => p.TallaEdad)
                     .HasForeignKey(d => d.NiñoId)
@@ -154,11 +218,20 @@ namespace Cencinai.Data
 
             modelBuilder.Entity<Usuario>(entity =>
             {
-                entity.Property(e => e.Contraseña).IsUnicode(false);
+                entity.Property(e => e.Contraseña)
+                    .IsRequired()
+                    .HasMaxLength(8)
+                    .IsUnicode(false);
 
-                entity.Property(e => e.Nombre).IsUnicode(false);
+                entity.Property(e => e.Nombre)
+                    .IsRequired()
+                    .HasMaxLength(200)
+                    .IsUnicode(false);
 
-                entity.Property(e => e.NombreUsuario).IsUnicode(false);
+                entity.Property(e => e.NombreUsuario)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
             });
 
             OnModelCreatingPartial(modelBuilder);

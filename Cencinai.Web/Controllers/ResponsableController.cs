@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Cencinai.Logic.Models;
+﻿using Cencinai.Logic.Models;
 using Cencinai.Logic.Repository.Interface;
 using Cencinai.Web.Enum;
 using Cencinai.Web.Helper;
@@ -86,7 +82,7 @@ namespace Cencinai.Web.Controllers
                     return View();
                 }
             }
-            catch(Exception ex)
+            catch
             {
                 return RedirectToAction("Error", "Error");
             }
@@ -138,7 +134,38 @@ namespace Cencinai.Web.Controllers
 
                 return RedirectToAction("ListarResponsables");
             }
-            catch(Exception ex)
+            catch
+            {
+                return RedirectToAction("Error", "Error");
+            }
+        }
+
+        public IActionResult BorrarResponsable(int id)
+        {
+            try
+            {
+                var responsable = responsableRepo.ObtenerResponsablePorId(id);
+
+                return View(responsable.Result);
+            }
+            catch
+            {
+                return RedirectToAction("Error", "Error");
+            }
+        }
+
+        [HttpPost]
+        public IActionResult BorrarResponsable(ResponsableModel responsable)
+        {
+            try
+            {
+                responsableRepo.BorrarResponsable(responsable);
+
+                Alert("El responsable ha sido eliminado", NotificationType.success);
+
+                return RedirectToAction("ListarResponsables");
+            }
+            catch
             {
                 return RedirectToAction("Error", "Error");
             }

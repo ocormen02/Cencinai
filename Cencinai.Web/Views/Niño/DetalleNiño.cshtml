@@ -1,0 +1,60 @@
+﻿@using Cencinai.Logic.Models;
+@model NiñoModel
+
+@{
+    ViewData["Title"] = "Detalle Niño";
+}
+
+<ol class="breadcrumb">
+    <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index" onclick="displayBusyIndicator()">Menú</a></li>
+    <li class="breadcrumb-item"><a asp-controller="Niño" asp-action="ListarNiños" onclick="displayBusyIndicator()">Niños</a></li>
+    <li class="breadcrumb-item active">Detalle Niño</li>
+</ol>
+<h4>Detalle Niño</h4>
+<hr />
+
+
+<div class="container">
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PrimerApellido)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PrimerApellido)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SegundoApellido)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SegundoApellido)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.InformacionAdicional)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.InformacionAdicional)
+        </dd>
+    </dl>
+</div>
+<br />
+<div class="row">
+    <div class="col-1">
+        <a asp-action="EditarNiño" asp-route-id="@(Model.Id)" class="btn btn-info" onclick="displayBusyIndicator()">Modificar</a>
+    </div>
+    <div class="col-1"></div>
+    <div class="col-1">
+        <a asp-action="ListarNiños" class="btn btn-light" onclick="displayBusyIndicator()">Cerrar</a>
+    </div>
+</div>

@@ -13,6 +13,8 @@ namespace Cencinai.Logic.Repository.Interface
 
         Task<PagedResult<ResponsableModel>> ObtenerResponsables(int pagina, string filtro);
 
+        Task<IEnumerable<ResponsableModel>> ListarResponsables();
+        
         void AgregarResponsable(ResponsableModel responsable);
 
         void BorrarResponsable(ResponsableModel responsable);

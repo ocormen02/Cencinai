@@ -21,15 +21,18 @@ namespace Cencinai.Logic.Models
         [Display(Name = "Fecha Nacimiento")]
         public DateTime? FechaNacimiento { get; set; }
 
-        [Required(ErrorMessage = "Campo Requerido")]
         [Display(Name = "Información Adicional")]
         public string InformacionAdicional { get; set; }
 
-        public int CategoryId { get; set; }
+        [Required(ErrorMessage = "Campo Requerido")]
+        [Display(Name = "Categoría")]
+        public int CategoriaId { get; set; }
 
+        [Required(ErrorMessage = "Campo Requerido")]
+        [Display(Name = "Responsable")]
         public int ResponsableId { get; set; }
 
-        public virtual CategoriaModel Category { get; set; }
+        public virtual CategoriaModel Categoria { get; set; }
 
         public virtual ResponsableModel Responsable { get; set; }
     }

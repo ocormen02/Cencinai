@@ -38,7 +38,8 @@ namespace Cencinai.Logic.Repository
 
         public void BorrarResponsable(ResponsableModel responsable)
         {
-            var entidadResponsable = mapper.Map<Responsable>(responsable);
+            var responsableBaseDatos = unitOfWork.Responsable.GetOne(x => x.Id == responsable.Id).Result;
+            var entidadResponsable = mapper.Map<Responsable>(responsableBaseDatos);
             unitOfWork.Responsable.Remove(entidadResponsable);
 
             unitOfWork.Complete();
@@ -80,6 +81,16 @@ namespace Cencinai.Logic.Repository
 
                 responsables = mapper.Map<PagedResult<ResponsableModel>>(resultado);
             }
+
+            return responsables;
+        }
+
+        public async Task<IEnumerable<ResponsableModel>> ListarResponsables()
+        {
+            var resultado = await unitOfWork.Responsable.GetAll(null, null, null);
+
+            IEnumerable<ResponsableModel> responsables = 
+                mapper.Map<IEnumerable<ResponsableModel>>(resultado);
 
             return responsables;
         }

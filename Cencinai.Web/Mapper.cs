@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Cencinai.Data.Models;
 using Cencinai.Logic.Models;
+using System.Collections.Generic;
 
 namespace Cencinai.Logic
 {
@@ -15,6 +16,7 @@ namespace Cencinai.Logic
             CreateMap<Categoria, CategoriaModel>().ReverseMap();
             CreateMap<IndiceMasaCorporal, IndiceMasaCorporalModel>().ReverseMap();
             CreateMap<Niño, NiñoModel>().ReverseMap();
+            CreateMap<PagedResult<Niño>, PagedResult<NiñoModel>>().ReverseMap();
             CreateMap<PesoEdad, PesoEdadModel>().ReverseMap();
             CreateMap<PesoTalla, PesoTallaModel>().ReverseMap();
             CreateMap<PuntuacionAreaDesarrollo, PuntuacionAreaDesarrolloModel>().ReverseMap();

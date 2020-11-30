@@ -8,6 +8,8 @@ namespace Cencinai.Logic.Repository.Interface
     {
         Task<NiñoModel> ObtenerNiñoPorId(int id);
 
+        public int ObtenerEdadNiñoPorId(int id);
+
         Task<PagedResult<NiñoModel>> ObtenerNiños(int pagina, string filtro);
 
         void AgregarNiño(NiñoModel niño);

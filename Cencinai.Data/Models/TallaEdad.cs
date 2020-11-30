@@ -7,11 +7,11 @@ namespace Cencinai.Data.Models
     {
         public int Id { get; set; }
         public int NiñoId { get; set; }
-        public bool? MuyAlto { get; set; }
-        public bool? Alto { get; set; }
-        public bool? Normal { get; set; }
-        public bool? BajoTalla { get; set; }
-        public bool? BajaTallaSevera { get; set; }
+        public bool? MuyAlto { get; set; } = false;
+        public bool? Alto { get; set; } = false;
+        public bool? Normal { get; set; } = false;
+        public bool? BajoTalla { get; set; } = false;
+        public bool? BajaTallaSevera { get; set; } = false;
         public DateTime FechaCreacion { get; set; }
         public DateTime? FechaActualizacion { get; set; }
 

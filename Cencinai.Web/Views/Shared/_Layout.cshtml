@@ -17,27 +17,36 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-            <a class="navbar-brand" href="#">Cencinai</a>
+            <a class="navbar-brand" asp-controller="Home" asp-action="Index" onclick="displayBusyIndicator()">Cencinai</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarColor01">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Niño" asp-action="ListarNiños" onclick="displayBusyIndicator()">Niños</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Features</a>
+                        <a class="nav-link" asp-controller="Responsable" asp-action="ListarResponsables" onclick="displayBusyIndicator()">Responsables</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="NivelDesarrollo" asp-action="Index" onclick="displayBusyIndicator()">Nivel Desarrollo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="EstadoNutricional" asp-action="Index" onclick="displayBusyIndicator()">Estado Nutricional</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Reportes" asp-action="Index" onclick="displayBusyIndicator()">Reportes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Usuario" asp-action="ListarUsuarios" onclick="displayBusyIndicator()">Usuarios</a>
                     </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">Cerrar</a>
-                            </div>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Login" asp-action="CerrarSesion" onclick="displayBusyIndicator()">Cerrar Sesión</a>
                         </li>
                     </ul>                        
                 </form>

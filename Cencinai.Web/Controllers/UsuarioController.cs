@@ -93,7 +93,7 @@ namespace Cencinai.Web.Controllers
 
                 return RedirectToAction("ListarUsuarios");
             }
-            catch(Exception ex)
+            catch
             {
                 return RedirectToAction("Error", "Error");
             }

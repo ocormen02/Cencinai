@@ -7,12 +7,12 @@ namespace Cencinai.Data.Models
     {
         public int Id { get; set; }
         public int NiñoId { get; set; }
-        public bool? PesoAlto { get; set; }
-        public bool? Normal { get; set; }
-        public bool? BajoPeso { get; set; }
-        public bool? BajoPesoSevero { get; set; }
-        public DateTime FechaCreacion { get; set; }
-        public DateTime? FechaActualizacion { get; set; }
+        public bool? PesoAlto { get; set; } = false;
+        public bool? Normal { get; set; } = false;
+        public bool? BajoPeso { get; set; } = false;
+        public bool? BajoPesoSevero { get; set; } = false;
+        public DateTime FechaCreacion { get; set; } 
+        public DateTime? FechaActualizacion { get; set; } 
 
         public virtual Niño Niño { get; set; }
     }

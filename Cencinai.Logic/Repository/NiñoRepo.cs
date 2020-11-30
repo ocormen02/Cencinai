@@ -63,6 +63,18 @@ namespace Cencinai.Logic.Repository
             return mapper.Map<NiñoModel>(niño);
         }
 
+        public int ObtenerEdadNiñoPorId(int id)
+        {
+            var fechaNacimiento = unitOfWork.Niño.GetOne(
+                x => x.Id == id,
+                CrearResponsableInclude(), CrearCategoriaInclude()
+                ).Result.FechaNacimiento;
+
+            var edad = DateTime.Now.Year - fechaNacimiento.Value.Year;
+
+            return edad;
+        }
+
         public async Task<PagedResult<NiñoModel>> ObtenerNiños(int pagina, string filtro)
         {
             PagedResult<NiñoModel> niños = new PagedResult<NiñoModel>();

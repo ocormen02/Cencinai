@@ -1,0 +1,91 @@
+﻿@model Cencinai.Logic.Models.ENPrimeraEtapaModel
+
+@{
+    ViewData["Title"] = "Estado Nutricional";
+}
+
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index" onclick="displayBusyIndicator()">Menú</a></li>
+        <li class="breadcrumb-item"><a asp-controller="EstadoNutricional" asp-action="Index" onclick="displayBusyIndicator()">Estado Nutricional</a></li>
+        <li class="breadcrumb-item active">Procesar Estado Nutricional</li>
+    </ol>
+<h4>Procesar Estado Nutricional</h4>
+<hr />
+
+<div class="container">
+    <form asp-action="ProcesarPrimeraEtapa">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <h6>Peso para Edad</h6>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Peso Alto</th>
+                    <th scope="col">Normal</th>
+                    <th scope="col">Bajo Peso</th>
+                    <th scope="col">Bajo Peso Severo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="table-secondary">
+                    <td scope="row"><input asp-for="PesoEdad.PesoAlto" name="PesoEdad" type="radio" /></td>
+                    <td scope="row"><input asp-for="PesoEdad.Normal" name="PesoEdad" type="radio" /></td>
+                    <td scope="row"><input asp-for="PesoEdad.BajoPeso" name="PesoEdad" type="radio" /></td>
+                    <td scope="row"><input asp-for="PesoEdad.BajoPesoSevero" name="PesoEdad" type="radio"/></td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <h6>Peso para Talla</h6>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Obesidad</th>
+                    <th scope="col">Sobre Peso</th>
+                    <th scope="col">Normal</th>
+                    <th scope="col">Desnutrición</th>
+                    <th scope="col">Desnutrición Severa</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="table-secondary">
+                    <td scope="row"><input asp-for="PesoTalla.Obesidad" name="PesoTalla" type="radio" /></td>
+                    <td scope="row"><input asp-for="PesoTalla.SobrePeso" name="PesoTalla" type="radio" /></td>
+                    <td scope="row"><input asp-for="PesoTalla.Normal" name="PesoTalla" type="radio" /></td>
+                    <td scope="row"><input asp-for="PesoTalla.Desnutricion" name="PesoTalla" type="radio" /></td>
+                    <td scope="row"><input asp-for="PesoTalla.DesnutricionSevera" name="PesoTalla" type="radio" /></td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <h6>Talla Edad</h6>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">MuyAlto</th>
+                    <th scope="col">Alto</th>
+                    <th scope="col">Normal</th>
+                    <th scope="col">Bajo Talla</th>
+                    <th scope="col">Baja Talla Severa</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="table-secondary">
+                    <td scope="row"><input asp-for="TallaEdad.MuyAlto" name="TallaEdad" type="radio" /></td>
+                    <td scope="row"><input asp-for="TallaEdad.Alto" name="TallaEdad" type="radio" /></td>
+                    <td scope="row"><input asp-for="TallaEdad.Normal" name="TallaEdad" type="radio"  /></td>
+                    <td scope="row"><input asp-for="TallaEdad.BajoTalla" name="TallaEdad" type="radio" /></td>
+                    <td scope="row"><input asp-for="TallaEdad.BajaTallaSevera" name="TallaEdad" type="radio" /></td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <div class="row">
+            <div class="col-1">
+                <a asp-action="Index" class="btn btn-danger" onclick="displayBusyIndicator()">Cancelar</a>
+            </div>
+            <div class="col-1">
+                <input type="submit" value="Procesar" class="btn btn-success" onclick="displayBusyUser()" />
+            </div>
+        </div>
+    </form>
+</div>

@@ -52,7 +52,7 @@
                         @Html.DisplayFor(modelItem => item.Categoria.Nombre)
                     </td>
                     <td>
-                        <a asp-action="DetalleNiño" asp-route-id="@(item.Id)" onclick="displayBusyIndicator()">
+                        <a asp-action="ProcesarNivelDesarrollo" asp-route-id="@(item.Id)" onclick="displayBusyIndicator()">
                             &nbsp;&nbsp;<i class="fa fa-book" style="font-size:20px"></i>
                         </a>
                     </td>

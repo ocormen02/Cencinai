@@ -4,7 +4,7 @@ using Cencinai.Data.Repository.Generic;
 
 namespace Cencinai.Data.Repository.Interface
 {
-    public interface IAreasDesarrolloRepository : IRepository<AreasDesarrollo>
+    public interface INivelDesarrolloRepository : IRepository<NivelDesarrollo>
     {
     }
 }

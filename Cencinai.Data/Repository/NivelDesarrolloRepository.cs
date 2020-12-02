@@ -5,9 +5,9 @@ using Cencinai.Data.Repository.Interface;
 
 namespace Cencinai.Data.Repository
 {
-    public class AreasDesarrolloRepository: Repository<AreasDesarrollo>, IAreasDesarrolloRepository
+    public class NivelDesarrolloRepository: Repository<NivelDesarrollo>, INivelDesarrolloRepository
     {
-        public AreasDesarrolloRepository(CencinaiContext context)
+        public NivelDesarrolloRepository(CencinaiContext context)
           : base(context)
         {
         }

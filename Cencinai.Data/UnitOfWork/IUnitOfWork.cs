@@ -7,7 +7,7 @@ namespace Cencinai.Data.UnitOfWork
     {
         IUsuariorRepository Usuario { get; }
 
-        IAreasDesarrolloRepository AreasDesarrollo { get; }
+        INivelDesarrolloRepository NivelDesarrollo { get; }
 
         ICantonRepository Canton { get; }
 

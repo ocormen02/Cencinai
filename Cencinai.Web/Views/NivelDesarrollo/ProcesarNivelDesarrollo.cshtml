@@ -1,0 +1,75 @@
+﻿@model Cencinai.Logic.Models.NivelDesarrolloModel
+
+@{
+    ViewData["Title"] = "Nivel Desarrollo";
+}
+
+<ol class="breadcrumb">
+    <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index" onclick="displayBusyIndicator()">Menú</a></li>
+    <li class="breadcrumb-item"><a asp-controller="NivelDesarrollo" asp-action="Index" onclick="displayBusyIndicator()">Nivel de Desarrollo</a></li>
+    <li class="breadcrumb-item active">Procesar Nivel de Desarrollo</li>
+</ol>
+<h4>Procesar Nivel de Desarrollo</h4>
+<hr />
+<div class="container">
+    <form asp-action="ProcesarNivelDesarrollo">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <h6>Áreas del desarrollo</h6>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Motora Gruesa</th>
+                    <th scope="col">Motora Fina</th>
+                    <th scope="col">Cognositiva</th>
+                    <th scope="col">Lenguaje</th>
+                    <th scope="col">Socioafectiva</th>
+                    <th scope="col">Hábitos</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="table-secondary">
+                    <td scope="row">
+                        <select asp-for="MotoraGruesa" class="form-control" id="MotoraGruesa" asp-items="ViewBag.Opciones">
+                            <option>---</option>
+                        </select>
+                    </td>
+                    <td scope="row">
+                        <select asp-for="MotoraFina" class="form-control" id="MotoraFina" asp-items="ViewBag.Opciones">
+                            <option>---</option>
+                        </select>
+                    </td>
+                    <td scope="row">
+                        <select asp-for="Cognoscitiva" class="form-control" id="Cognoscitiva" asp-items="ViewBag.Opciones">
+                            <option>---</option>
+                        </select>
+                    </td>
+                    <td scope="row">
+                        <select asp-for="Lenguaje" class="form-control" id="Lenguaje" asp-items="ViewBag.Opciones">
+                            <option>---</option>
+                        </select>
+                    </td>
+                    <td scope="row">
+                        <select asp-for="Socioafectiva" class="form-control" id="Socioafectiva" asp-items="ViewBag.Opciones">
+                            <option>---</option>
+                        </select>
+                    </td>
+                    <td scope="row">
+                        <select asp-for="Habitos" class="form-control" id="Habitos" asp-items="ViewBag.Opciones">
+                            <option>---</option>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <input type="hidden" asp-for="NiñoId" />
+        <br />
+        <div class="row">
+            <div class="col-1">
+                <a asp-action="Index" class="btn btn-danger" onclick="displayBusyIndicator()">Cancelar</a>
+            </div>
+            <div class="col-1">
+                <input type="submit" value="Procesar" class="btn btn-success" onclick="displayBusyUser()" />
+            </div>
+        </div>
+    </form>
+</div>

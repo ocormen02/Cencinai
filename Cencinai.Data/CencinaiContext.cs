@@ -14,7 +14,7 @@ namespace Cencinai.Data
         {
         }
 
-        public virtual DbSet<AreasDesarrollo> AreasDesarrollo { get; set; }
+        public virtual DbSet<NivelDesarrollo> NivelDesarrollo { get; set; }
         public virtual DbSet<EstadoNutricional> EstadoNutricional { get; set; }
         public virtual DbSet<Canton> Canton { get; set; }
         public virtual DbSet<Categoria> Categoria { get; set; }
@@ -26,7 +26,7 @@ namespace Cencinai.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<AreasDesarrollo>(entity =>
+            modelBuilder.Entity<NivelDesarrollo>(entity =>
             {
                 entity.Property(e => e.FechaActualizacion).HasColumnType("datetime");
 
@@ -35,7 +35,7 @@ namespace Cencinai.Data
                 entity.HasOne(d => d.Niño)
                     .WithMany(p => p.AreasDesarrollo)
                     .HasForeignKey(d => d.NiñoId)
-                    .HasConstraintName("FK_AreasDesarrollo_Niño");
+                    .HasConstraintName("FK_NivelDesarrollo_Niño");
             });
 
             modelBuilder.Entity<Canton>(entity =>

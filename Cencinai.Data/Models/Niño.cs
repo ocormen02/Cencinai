@@ -7,7 +7,7 @@ namespace Cencinai.Data.Models
     {
         public Niño()
         {
-            AreasDesarrollo = new HashSet<AreasDesarrollo>();
+            AreasDesarrollo = new HashSet<NivelDesarrollo>();
             EstadoNutricional = new HashSet<EstadoNutricional>();
         }
 
@@ -22,7 +22,7 @@ namespace Cencinai.Data.Models
 
         public virtual Categoria Categoria { get; set; }
         public virtual Responsable Responsable { get; set; }
-        public virtual ICollection<AreasDesarrollo> AreasDesarrollo { get; set; }
+        public virtual ICollection<NivelDesarrollo> AreasDesarrollo { get; set; }
         public virtual ICollection<EstadoNutricional> EstadoNutricional { get; set; }
     }
 }

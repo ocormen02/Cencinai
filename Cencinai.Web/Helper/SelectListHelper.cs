@@ -103,5 +103,27 @@ namespace Cencinai.Web.Helper
 
             return selectList;
         }
+
+        public static List<SelectListItem> ObtenerOpcionesAreasDesarrollo()
+        {
+            List<SelectListItem> selectList = new List<SelectListItem>();
+            selectList.Add(new SelectListItem
+            {
+                Text = "Superior",
+                Value = "Superior"
+            });
+            selectList.Add(new SelectListItem
+            {
+                Text = "Adecuado",
+                Value = "Adecuado"
+            });
+            selectList.Add(new SelectListItem
+            {
+                Text = "Bajo",
+                Value = "Bajo"
+            });
+
+            return selectList;
+        }
     }
 }

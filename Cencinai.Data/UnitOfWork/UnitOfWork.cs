@@ -10,7 +10,7 @@ namespace Cencinai.Data.UnitOfWork
 
         public IUsuariorRepository Usuario { get; private set; }
 
-        public IAreasDesarrolloRepository AreasDesarrollo { get; private set; }
+        public INivelDesarrolloRepository NivelDesarrollo { get; private set; }
 
         public ICantonRepository Canton { get; private set; }
 
@@ -31,7 +31,7 @@ namespace Cencinai.Data.UnitOfWork
             context = _context;
 
             Usuario = new UsuarioRepository(context);
-            AreasDesarrollo = new AreasDesarrolloRepository(context);
+            NivelDesarrollo = new NivelDesarrolloRepository(context);
             Canton = new CantonRepository(context);
             Categoria = new CategoriaRepository(context);
             Distrito = new DistritoRepository(context);

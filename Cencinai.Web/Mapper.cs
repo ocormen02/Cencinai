@@ -9,7 +9,7 @@ namespace Cencinai.Logic
     {
         public Mapper()
         {
-            CreateMap<AreasDesarrollo, AreasDesarrolloModel>().ReverseMap();
+            CreateMap<NivelDesarrollo, NivelDesarrolloModel>().ReverseMap();
             CreateMap<Canton, CantonModel>().ReverseMap();
             CreateMap<Provincia, ProvinciaModel>().ReverseMap();
             CreateMap<Distrito, DistritoModel>().ReverseMap();

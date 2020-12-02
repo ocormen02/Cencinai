@@ -3,31 +3,31 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Cencinai.Logic.Models
 {
-    public class AreasDesarrolloModel : BaseModel
+    public class NivelDesarrolloModel : BaseModel
     {
 
         [Display(Name = "Motora Gruesa")]
-        public int? MotoraGruesa { get; set; }
+        public string MotoraGruesa { get; set; }
 
         [Display(Name = "Motora Fina")]
-        public int? MotoraFina { get; set; }
+        public string MotoraFina { get; set; }
 
         [Display(Name = "Cognoscitiva")]
-        public int? Cognoscitiva { get; set; }
+        public string Cognoscitiva { get; set; }
 
         [Display(Name = "Lenguaje")]
-        public int? Lenguaje { get; set; }
+        public string Lenguaje { get; set; }
 
         [Display(Name = "Socioafectiva")]
-        public int? Socioafectiva { get; set; }
+        public string Socioafectiva { get; set; }
 
         [Display(Name = "Habitos")]
-        public int? Habitos { get; set; }
+        public string Habitos { get; set; }
 
         public int NiñoId { get; set; }
 
         public DateTime FechaCreacion { get; set; }
 
-        public DateTime FechaActualizacion { get; set; }
+        public DateTime? FechaActualizacion { get; set; }
     }
 }

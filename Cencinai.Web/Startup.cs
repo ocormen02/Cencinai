@@ -59,6 +59,7 @@ namespace Cencinai.Web
             services.AddScoped<INiñoRepo, NiñoRepo>();
             services.AddScoped<ICategoriaRepo, CategoriaRepo>();
             services.AddScoped<IEstadoNutricionalRepo, EstadoNutricionalRepo>();
+            services.AddScoped<INivelDesarrolloRepo, NivelDesarrolloRepo>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

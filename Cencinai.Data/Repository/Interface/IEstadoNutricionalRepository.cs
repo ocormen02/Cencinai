@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Cencinai.Data.Repository.Interface
 {
-    public interface IPesoEdadRepository : IRepository<PesoEdad>
+    public interface IEstadoNutricionalRepository : IRepository<EstadoNutricional>
     {
     }
 }

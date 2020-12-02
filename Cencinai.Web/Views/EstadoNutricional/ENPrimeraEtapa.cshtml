@@ -1,4 +1,4 @@
-﻿@model Cencinai.Logic.Models.ENPrimeraEtapaModel
+﻿@model Cencinai.Logic.Models.EstadoNutricionalModel
 
 @{
     ViewData["Title"] = "Estado Nutricional";
@@ -13,7 +13,7 @@
 <hr />
 
 <div class="container">
-    <form asp-action="ProcesarPrimeraEtapa">
+    <form asp-action="ProcesarEstadoNutricional">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <h6>Peso para Edad</h6>
         <table class="table table-hover">
@@ -27,10 +27,10 @@
             </thead>
             <tbody>
                 <tr class="table-secondary">
-                    <td scope="row"><input asp-for="PesoEdad.PesoAlto" name="PesoEdad" type="radio" /></td>
-                    <td scope="row"><input asp-for="PesoEdad.Normal" name="PesoEdad" type="radio" /></td>
-                    <td scope="row"><input asp-for="PesoEdad.BajoPeso" name="PesoEdad" type="radio" /></td>
-                    <td scope="row"><input asp-for="PesoEdad.BajoPesoSevero" name="PesoEdad" type="radio"/></td>
+                    <td scope="row"><input asp-for="PesoEdad" name="PesoEdad" type="radio" value="PesoAlto" /></td>
+                    <td scope="row"><input asp-for="PesoEdad" name="PesoEdad" type="radio" value="Normal" /></td>
+                    <td scope="row"><input asp-for="PesoEdad" name="PesoEdad" type="radio" value="BajoPeso" /></td>
+                    <td scope="row"><input asp-for="PesoEdad" name="PesoEdad" type="radio" value="BajoPesoSevero" /></td>
                 </tr>
             </tbody>
         </table>
@@ -48,11 +48,11 @@
             </thead>
             <tbody>
                 <tr class="table-secondary">
-                    <td scope="row"><input asp-for="PesoTalla.Obesidad" name="PesoTalla" type="radio" /></td>
-                    <td scope="row"><input asp-for="PesoTalla.SobrePeso" name="PesoTalla" type="radio" /></td>
-                    <td scope="row"><input asp-for="PesoTalla.Normal" name="PesoTalla" type="radio" /></td>
-                    <td scope="row"><input asp-for="PesoTalla.Desnutricion" name="PesoTalla" type="radio" /></td>
-                    <td scope="row"><input asp-for="PesoTalla.DesnutricionSevera" name="PesoTalla" type="radio" /></td>
+                    <td scope="row"><input asp-for="PesoTalla" name="PesoTalla" type="radio" value="Obesidad" /></td>
+                    <td scope="row"><input asp-for="PesoTalla" name="PesoTalla" type="radio" value="SobrePeso" /></td>
+                    <td scope="row"><input asp-for="PesoTalla" name="PesoTalla" type="radio" value="Normal" /></td>
+                    <td scope="row"><input asp-for="PesoTalla" name="PesoTalla" type="radio" value="Desnutricion" /></td>
+                    <td scope="row"><input asp-for="PesoTalla" name="PesoTalla" type="radio" value="DesnutricionSevera" /></td>
                 </tr>
             </tbody>
         </table>
@@ -61,7 +61,7 @@
         <table class="table table-hover">
             <thead>
                 <tr>
-                    <th scope="col">MuyAlto</th>
+                    <th scope="col">Muy Alto</th>
                     <th scope="col">Alto</th>
                     <th scope="col">Normal</th>
                     <th scope="col">Bajo Talla</th>
@@ -70,14 +70,15 @@
             </thead>
             <tbody>
                 <tr class="table-secondary">
-                    <td scope="row"><input asp-for="TallaEdad.MuyAlto" name="TallaEdad" type="radio" /></td>
-                    <td scope="row"><input asp-for="TallaEdad.Alto" name="TallaEdad" type="radio" /></td>
-                    <td scope="row"><input asp-for="TallaEdad.Normal" name="TallaEdad" type="radio"  /></td>
-                    <td scope="row"><input asp-for="TallaEdad.BajoTalla" name="TallaEdad" type="radio" /></td>
-                    <td scope="row"><input asp-for="TallaEdad.BajaTallaSevera" name="TallaEdad" type="radio" /></td>
+                    <td scope="row"><input asp-for="TallaEdad" name="TallaEdad" type="radio" value="MuyAlto" /></td>
+                    <td scope="row"><input asp-for="TallaEdad" name="TallaEdad" type="radio" value="Alto" /></td>
+                    <td scope="row"><input asp-for="TallaEdad" name="TallaEdad" type="radio" value="Normal" /></td>
+                    <td scope="row"><input asp-for="TallaEdad" name="TallaEdad" type="radio" value="BajoTalla" /></td>
+                    <td scope="row"><input asp-for="TallaEdad" name="TallaEdad" type="radio" value="BajaTallaSevera" /></td>
                 </tr>
             </tbody>
         </table>
+        <input type="hidden" asp-for="NiñoId" />
         <br />
         <div class="row">
             <div class="col-1">

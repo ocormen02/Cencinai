@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Cencinai.Logic.Models;
 using Cencinai.Logic.Repository.Interface;
+using Cencinai.Web.Enum;
 using Microsoft.AspNetCore.Mvc;
 
 
@@ -14,10 +15,13 @@ namespace Cencinai.Web.Controllers
     {
         #region Constructor
         public readonly INiñoRepo niñoRepo;
+        public readonly IEstadoNutricionalRepo estadoNutricionalRepo;
 
-        public EstadoNutricional(INiñoRepo _niñoRepo)
+        public EstadoNutricional(INiñoRepo _niñoRepo, 
+            IEstadoNutricionalRepo _estadoNutricionalRepo)
         {
             niñoRepo = _niñoRepo;
+            estadoNutricionalRepo = _estadoNutricionalRepo;
         }
         #endregion
        
@@ -39,32 +43,34 @@ namespace Cencinai.Web.Controllers
         public IActionResult ObtenerProcesoPorEdad(int id)
         {
             var edad = niñoRepo.ObtenerEdadNiñoPorId(id);
+            EstadoNutricionalModel estadoNutricional = new EstadoNutricionalModel();
+            estadoNutricional.NiñoId = id;
 
-            
-            if(edad < 5)
+            if (edad < 5)
             {
-                ENPrimeraEtapaModel primeraEtapa = new ENPrimeraEtapaModel();
-                primeraEtapa.PesoEdad.NiñoId = id;
-                primeraEtapa.PesoTalla.NiñoId = id;
-                primeraEtapa.TallaEdad.NiñoId = id;
-
-                return View("ENPrimeraEtapa", primeraEtapa);
+                return View("ENPrimeraEtapa", estadoNutricional);
             }
             else
             {
-                ENSegundaEtapaModel segundaEtapa = new ENSegundaEtapaModel();
-                segundaEtapa.IndiceMasaCorporal.NiñoId = id;
-                segundaEtapa.TallaEdad.NiñoId = id;
-
-                return View("ENSegundaEtapa", segundaEtapa);
+                return View("ENSegundaEtapa", estadoNutricional);
             }
 
         }
 
         [HttpPost]
-        public IActionResult ProcesarPrimeraEtapa(ENPrimeraEtapaModel primeraEtapa)
+        public IActionResult ProcesarEstadoNutricional(EstadoNutricionalModel primeraEtapa)
         {
-            return View();
+            try
+            {
+                estadoNutricionalRepo.AgregarEstadoNutricional(primeraEtapa);
+                Alert("El estado nutricional ha sido procesado", NotificationType.success);
+
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return RedirectToAction("Error", "Error");
+            }
         }
     }
 }

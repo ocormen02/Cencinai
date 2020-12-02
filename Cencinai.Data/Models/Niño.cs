@@ -8,11 +8,7 @@ namespace Cencinai.Data.Models
         public Niño()
         {
             AreasDesarrollo = new HashSet<AreasDesarrollo>();
-            IndiceMasaCorporal = new HashSet<IndiceMasaCorporal>();
-            PesoEdad = new HashSet<PesoEdad>();
-            PesoTalla = new HashSet<PesoTalla>();
-            PuntuacionAreaDesarrollo = new HashSet<PuntuacionAreaDesarrollo>();
-            TallaEdad = new HashSet<TallaEdad>();
+            EstadoNutricional = new HashSet<EstadoNutricional>();
         }
 
         public int Id { get; set; }
@@ -27,10 +23,6 @@ namespace Cencinai.Data.Models
         public virtual Categoria Categoria { get; set; }
         public virtual Responsable Responsable { get; set; }
         public virtual ICollection<AreasDesarrollo> AreasDesarrollo { get; set; }
-        public virtual ICollection<IndiceMasaCorporal> IndiceMasaCorporal { get; set; }
-        public virtual ICollection<PesoEdad> PesoEdad { get; set; }
-        public virtual ICollection<PesoTalla> PesoTalla { get; set; }
-        public virtual ICollection<PuntuacionAreaDesarrollo> PuntuacionAreaDesarrollo { get; set; }
-        public virtual ICollection<TallaEdad> TallaEdad { get; set; }
+        public virtual ICollection<EstadoNutricional> EstadoNutricional { get; set; }
     }
 }

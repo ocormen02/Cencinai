@@ -1,7 +1,72 @@
-﻿
+﻿@model Cencinai.Logic.Models.EstadoNutricionalModel
+
 @{
-    ViewData["Title"] = "ENSegundaEtapa";
+    ViewData["Title"] = "Estado Nutricional";
 }
 
-<h1>ENSegundaEtapa</h1>
+<ol class="breadcrumb">
+    <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index" onclick="displayBusyIndicator()">Menú</a></li>
+    <li class="breadcrumb-item"><a asp-controller="EstadoNutricional" asp-action="Index" onclick="displayBusyIndicator()">Estado Nutricional</a></li>
+    <li class="breadcrumb-item active">Procesar Estado Nutricional</li>
+</ol>
+<h4>Procesar Estado Nutricional</h4>
+<hr />
 
+<div class="container">
+    <form asp-action="ProcesarEstadoNutricional">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <h6>Indice de Masa Corporal</h6>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Obesidad</th>
+                    <th scope="col">Sobrepeso</th>
+                    <th scope="col">Normal</th>
+                    <th scope="col">Desnutrición</th>
+                    <th scope="col">Desnutrición Severa</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="table-secondary">
+                    <td scope="row"><input asp-for="IndiceMasaCorporal" name="IndiceMasaCorporal" type="radio" value="Obesidad" /></td>
+                    <td scope="row"><input asp-for="IndiceMasaCorporal" name="IndiceMasaCorporal" type="radio" value="Sobrepeso" /></td>
+                    <td scope="row"><input asp-for="IndiceMasaCorporal" name="IndiceMasaCorporal" type="radio" value="Normal" /></td>
+                    <td scope="row"><input asp-for="IndiceMasaCorporal" name="IndiceMasaCorporal" type="radio" value="Desnutricion" /></td>
+                    <td scope="row"><input asp-for="IndiceMasaCorporal" name="IndiceMasaCorporal" type="radio" value="DesnutricionSevera" /></td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <h6>Talla Edad</h6>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Muy Alto</th>
+                    <th scope="col">Alto</th>
+                    <th scope="col">Normal</th>
+                    <th scope="col">Bajo Talla</th>
+                    <th scope="col">Baja Talla Severa</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="table-secondary">
+                    <td scope="row"><input asp-for="TallaEdad" name="TallaEdad" type="radio" value="MuyAlto" /></td>
+                    <td scope="row"><input asp-for="TallaEdad" name="TallaEdad" type="radio" value="Alto" /></td>
+                    <td scope="row"><input asp-for="TallaEdad" name="TallaEdad" type="radio" value="Normal" /></td>
+                    <td scope="row"><input asp-for="TallaEdad" name="TallaEdad" type="radio" value="BajoTalla" /></td>
+                    <td scope="row"><input asp-for="TallaEdad" name="TallaEdad" type="radio" value="BajaTallaSevera" /></td>
+                </tr>
+            </tbody>
+        </table>
+        <input type="hidden" asp-for="NiñoId" />
+        <br />
+        <div class="row">
+            <div class="col-1">
+                <a asp-action="Index" class="btn btn-danger" onclick="displayBusyIndicator()">Cancelar</a>
+            </div>
+            <div class="col-1">
+                <input type="submit" value="Procesar" class="btn btn-success" onclick="displayBusyUser()" />
+            </div>
+        </div>
+    </form>
+</div>

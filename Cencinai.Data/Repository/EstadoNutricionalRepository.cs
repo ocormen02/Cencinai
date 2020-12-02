@@ -5,9 +5,9 @@ using Cencinai.Data.Repository.Interface;
 
 namespace Cencinai.Data.Repository
 {
-    public class IndiceMasaCorporalRepository : Repository<IndiceMasaCorporal>, IIndiceMasaCorporalRepository
+    public class EstadoNutricionalRepository : Repository<EstadoNutricional>, IEstadoNutricionalRepository
     {
-        public IndiceMasaCorporalRepository(CencinaiContext context)
+        public EstadoNutricionalRepository(CencinaiContext context)
           : base(context)
         {
         }

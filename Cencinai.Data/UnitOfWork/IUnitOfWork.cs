@@ -15,21 +15,14 @@ namespace Cencinai.Data.UnitOfWork
 
         IDistritoRepository Distrito { get; }
 
-        IIndiceMasaCorporalRepository IndiceMasaCorporal { get; }
-
         INiñoRepository Niño { get; }
 
-        IPesoEdadRepository PesoEdad { get; }
-
-        IPesoTallaRepository PesoTalla { get; }
+        IEstadoNutricionalRepository EstadoNutricional { get; }
 
         IProvinciaRepository Provincia { get; }
 
-        IPuntuacionAreaDesarrolloRepository PuntuacionAreaDesarrollo { get; }
-
         IResponsableRepository Responsable { get; }
 
-        ITallaEdadRepository TallaEdad { get; }
 
         int Complete();
     }

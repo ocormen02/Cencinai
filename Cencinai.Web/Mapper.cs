@@ -14,14 +14,10 @@ namespace Cencinai.Logic
             CreateMap<Provincia, ProvinciaModel>().ReverseMap();
             CreateMap<Distrito, DistritoModel>().ReverseMap();
             CreateMap<Categoria, CategoriaModel>().ReverseMap();
-            CreateMap<IndiceMasaCorporal, IndiceMasaCorporalModel>().ReverseMap();
             CreateMap<Niño, NiñoModel>().ReverseMap();
             CreateMap<PagedResult<Niño>, PagedResult<NiñoModel>>().ReverseMap();
-            CreateMap<PesoEdad, PesoEdadModel>().ReverseMap();
-            CreateMap<PesoTalla, PesoTallaModel>().ReverseMap();
-            CreateMap<PuntuacionAreaDesarrollo, PuntuacionAreaDesarrolloModel>().ReverseMap();
             CreateMap<Responsable, ResponsableModel>().ReverseMap();
-            CreateMap<TallaEdad, TallaEdadModel>().ReverseMap();
+            CreateMap<EstadoNutricional, EstadoNutricionalModel>().ReverseMap();
             CreateMap<Usuario, UsuarioModel>().ReverseMap();
             CreateMap<PagedResult<Usuario>, PagedResult<UsuarioModel>>().ReverseMap();
             CreateMap<PagedResult<Responsable>, PagedResult<ResponsableModel>>().ReverseMap();

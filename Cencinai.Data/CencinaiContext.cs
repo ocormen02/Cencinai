@@ -15,17 +15,13 @@ namespace Cencinai.Data
         }
 
         public virtual DbSet<AreasDesarrollo> AreasDesarrollo { get; set; }
+        public virtual DbSet<EstadoNutricional> EstadoNutricional { get; set; }
         public virtual DbSet<Canton> Canton { get; set; }
         public virtual DbSet<Categoria> Categoria { get; set; }
         public virtual DbSet<Distrito> Distrito { get; set; }
-        public virtual DbSet<IndiceMasaCorporal> IndiceMasaCorporal { get; set; }
         public virtual DbSet<Niño> Niño { get; set; }
-        public virtual DbSet<PesoEdad> PesoEdad { get; set; }
-        public virtual DbSet<PesoTalla> PesoTalla { get; set; }
         public virtual DbSet<Provincia> Provincia { get; set; }
-        public virtual DbSet<PuntuacionAreaDesarrollo> PuntuacionAreaDesarrollo { get; set; }
         public virtual DbSet<Responsable> Responsable { get; set; }
-        public virtual DbSet<TallaEdad> TallaEdad { get; set; }
         public virtual DbSet<Usuario> Usuario { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -80,18 +76,6 @@ namespace Cencinai.Data
                     .HasConstraintName("FK_Distrito_Canton");
             });
 
-            modelBuilder.Entity<IndiceMasaCorporal>(entity =>
-            {
-                entity.Property(e => e.FechaActualizacion).HasColumnType("datetime");
-
-                entity.Property(e => e.FechaCreacion).HasColumnType("datetime");
-
-                entity.HasOne(d => d.Niño)
-                    .WithMany(p => p.IndiceMasaCorporal)
-                    .HasForeignKey(d => d.NiñoId)
-                    .HasConstraintName("FK_IndiceMasaCorporal_Niño");
-            });
-
             modelBuilder.Entity<Niño>(entity =>
             {
                 entity.Property(e => e.FechaNacimiento).HasColumnType("date");
@@ -124,28 +108,16 @@ namespace Cencinai.Data
                     .HasConstraintName("FK_Niño_Responsable");
             });
 
-            modelBuilder.Entity<PesoEdad>(entity =>
+            modelBuilder.Entity<EstadoNutricional>(entity =>
             {
                 entity.Property(e => e.FechaActualizacion).HasColumnType("datetime");
 
                 entity.Property(e => e.FechaCreacion).HasColumnType("datetime");
 
                 entity.HasOne(d => d.Niño)
-                    .WithMany(p => p.PesoEdad)
+                    .WithMany(p => p.EstadoNutricional)
                     .HasForeignKey(d => d.NiñoId)
-                    .HasConstraintName("FK_PesoEdad_Niño");
-            });
-
-            modelBuilder.Entity<PesoTalla>(entity =>
-            {
-                entity.Property(e => e.FechaActualizacion).HasColumnType("datetime");
-
-                entity.Property(e => e.FechaCreacion).HasColumnType("datetime");
-
-                entity.HasOne(d => d.Niño)
-                    .WithMany(p => p.PesoTalla)
-                    .HasForeignKey(d => d.NiñoId)
-                    .HasConstraintName("FK_PesoTalla_Niño");
+                    .HasConstraintName("FK_EstadoNutricional_Niño");
             });
 
             modelBuilder.Entity<Provincia>(entity =>
@@ -154,18 +126,6 @@ namespace Cencinai.Data
                     .IsRequired()
                     .HasMaxLength(50)
                     .IsUnicode(false);
-            });
-
-            modelBuilder.Entity<PuntuacionAreaDesarrollo>(entity =>
-            {
-                entity.Property(e => e.FechaActualizacion).HasColumnType("datetime");
-
-                entity.Property(e => e.FechaCreacion).HasColumnType("datetime");
-
-                entity.HasOne(d => d.Niño)
-                    .WithMany(p => p.PuntuacionAreaDesarrollo)
-                    .HasForeignKey(d => d.NiñoId)
-                    .HasConstraintName("FK_PuntuacionAreaDesarrollo_Niño");
             });
 
             modelBuilder.Entity<Responsable>(entity =>
@@ -202,18 +162,6 @@ namespace Cencinai.Data
                     .WithMany(p => p.Responsable)
                     .HasForeignKey(d => d.DistritoId)
                     .HasConstraintName("FK_Responsable_Distrito");
-            });
-
-            modelBuilder.Entity<TallaEdad>(entity =>
-            {
-                entity.Property(e => e.FechaActualizacion).HasColumnType("datetime");
-
-                entity.Property(e => e.FechaCreacion).HasColumnType("datetime");
-
-                entity.HasOne(d => d.Niño)
-                    .WithMany(p => p.TallaEdad)
-                    .HasForeignKey(d => d.NiñoId)
-                    .HasConstraintName("FK_TallaEdad_Niño");
             });
 
             modelBuilder.Entity<Usuario>(entity =>

@@ -48,6 +48,7 @@ namespace Cencinai.Web.Controllers
                 var categorias = categoriaRepo.ListarCategorias().Result;
                 ViewBag.responsables = SelectListHelper.ObtenerListaResponsables(responsables);
                 ViewBag.categorias = SelectListHelper.ObtenerListaCategorias(categorias);
+                ViewBag.sexo = SelectListHelper.ObtenerOpcionesSexo();
 
                 return View();
             }

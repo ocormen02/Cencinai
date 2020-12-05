@@ -18,6 +18,10 @@ namespace Cencinai.Logic.Models
         public string SegundoApellido { get; set; }
 
         [Required(ErrorMessage = "Campo Requerido")]
+        [Display(Name = "Sexo")]
+        public string Sexo { get; set; }
+
+        [Required(ErrorMessage = "Campo Requerido")]
         [Display(Name = "Fecha Nacimiento")]
         public DateTime? FechaNacimiento { get; set; }
 

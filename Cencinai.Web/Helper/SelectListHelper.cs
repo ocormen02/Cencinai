@@ -125,5 +125,22 @@ namespace Cencinai.Web.Helper
 
             return selectList;
         }
+
+        public static List<SelectListItem> ObtenerOpcionesSexo()
+        {
+            List<SelectListItem> selectList = new List<SelectListItem>();
+            selectList.Add(new SelectListItem
+            {
+                Text = "Hombre",
+                Value = "Hombre"
+            });
+            selectList.Add(new SelectListItem
+            {
+                Text = "Mujer",
+                Value = "Mujer"
+            });
+
+            return selectList;
+        }
     }
 }

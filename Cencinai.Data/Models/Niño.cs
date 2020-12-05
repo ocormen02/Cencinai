@@ -15,6 +15,7 @@ namespace Cencinai.Data.Models
         public string Nombre { get; set; }
         public string PrimerApellido { get; set; }
         public string SegundoApellido { get; set; }
+        public string Sexo { get; set; }
         public DateTime? FechaNacimiento { get; set; }
         public string InformacionAdicional { get; set; }
         public int CategoriaId { get; set; }

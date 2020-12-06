@@ -62,7 +62,7 @@ namespace Cencinai.Web.Controllers
                     return View();
                 }
             }
-            catch
+            catch(Exception ex)
             {
                 return RedirectToAction("Error", "Error");
             }
@@ -86,7 +86,7 @@ namespace Cencinai.Web.Controllers
         public IActionResult EditarUsuario(UsuarioModel usuario)
         {
             try
-            {                
+            {
                 usuarioRepo.EditarUsuario(usuario);
 
                 Alert("El usuario ha sido modificado", NotificationType.success);

@@ -39,7 +39,7 @@ namespace Cencinai.Web.Controllers
 
                 if (!String.IsNullOrEmpty(usuario.NombreUsuario) && !String.IsNullOrEmpty(usuario.Contraseña))
                 {
-                    var password = usuario.Contraseña;//EncryptHelper.GetHashPassword(usuario.Contraseña);
+                    var password = EncryptHelper.GetHashPassword(usuario.Contraseña);
 
                     var usuarioAuntenticado = usuarioRepo.ObtenerUsuario(usuario.NombreUsuario, password).Result;
 

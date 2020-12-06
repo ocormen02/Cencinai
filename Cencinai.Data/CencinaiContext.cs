@@ -168,7 +168,7 @@ namespace Cencinai.Data
             {
                 entity.Property(e => e.Contraseña)
                     .IsRequired()
-                    .HasMaxLength(8)
+                    .HasMaxLength(100)
                     .IsUnicode(false);
 
                 entity.Property(e => e.Nombre)

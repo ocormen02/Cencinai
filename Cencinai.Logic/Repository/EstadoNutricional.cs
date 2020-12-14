@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
 using Cencinai.Logic.Helper;
+using Microsoft.EntityFrameworkCore.Query;
+using Microsoft.EntityFrameworkCore;
 
 namespace Cencinai.Logic.Repository
 {
@@ -35,5 +37,25 @@ namespace Cencinai.Logic.Repository
             
             unitOfWork.Complete();
         }
+
+        public async Task<IList<EstadoNutricionalModel>> ObtenerReporteEstadoNutricional()
+        {
+            var listaEstadoNutricional = await unitOfWork.EstadoNutricional.GetAll(
+                null, x => x.OrderByDescending(o => o.FechaCreacion), 
+                CrearNiñoInclude(), CrearResponsableInclude());
+
+            return mapper.Map<IList<EstadoNutricionalModel>>(listaEstadoNutricional);
+        }
+
+        #region Includes
+        public Func<IQueryable<EstadoNutricional>, IIncludableQueryable<EstadoNutricional, object>> CrearNiñoInclude()
+        {
+            return niño => niño.Include(x => x.Niño);
+        }
+        public Func<IQueryable<EstadoNutricional>, IIncludableQueryable<EstadoNutricional, object>> CrearResponsableInclude()
+        {
+            return responsable => responsable.Include(x => x.Niño.Responsable);
+        }
+        #endregion
     }
 }

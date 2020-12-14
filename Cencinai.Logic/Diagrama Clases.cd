@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Cencinai.Logic.Helper.EncryptHelper">
+    <Position X="21.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>Helper\EncryptHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cencinai.Logic.Models.BaseModel">
+    <Position X="11.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\BaseModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cencinai.Logic.Models.CantonModel">
+    <Position X="20" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAECAAAAAAAAAAAAAAAAgAAACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\CantonModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cencinai.Logic.Models.CategoriaModel">
+    <Position X="10.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Models\CategoriaModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cencinai.Logic.Models.DistritoModel">
+    <Position X="25.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAEAAAAgAAAAAAAAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>Models\DistritoModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cencinai.Logic.Models.EstadoNutricionalModel">
+    <Position X="17.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAIAAAAAwAAAAAAAAAAAABAAAAAAAIAAgAAQA=</HashCode>
+      <FileName>Models\EstadoNutricionalModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cencinai.Logic.Models.NiñoModel">
+    <Position X="6.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAACAgAAAAAAgACAAoAAAAAAAAAAAAAAAAAAAQEA=</HashCode>
+      <FileName>Models\NiñoModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cencinai.Logic.Models.NivelDesarrolloModel">
+    <Position X="8.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAJAAIEAAAAgAAAAAAAAAAAAAAAAAABAgAAgAAAA=</HashCode>
+      <FileName>Models\NivelDesarrolloModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cencinai.Logic.Models.ProvinciaModel">
+    <Position X="21.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\ProvinciaModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cencinai.Logic.Models.ResponsableModel">
+    <Position X="13" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAACAAQAoAAAAAAhAAAAAAAAAkAAQAA=</HashCode>
+      <FileName>Models\ResponsableModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cencinai.Logic.Models.UsuarioModel">
+    <Position X="15.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAAAAAgAAAAAAAAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>Models\UsuarioModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cencinai.Logic.Repository.CantonRepo" BaseTypeListCollapsed="true">
+    <Position X="21.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAAAAAAAAACAAAAAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>Repository\CantonRepo.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Cencinai.Logic.Repository.CategoriaRepo" BaseTypeListCollapsed="true">
+    <Position X="23.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAYAAAAAAAAAACAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repository\CategoriaRepo.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Cencinai.Logic.Repository.DistritoRepo" BaseTypeListCollapsed="true">
+    <Position X="20" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAAAAAAAAACAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Repository\DistritoRepo.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Cencinai.Logic.Repository.EstadoNutricionalRepo" BaseTypeListCollapsed="true">
+    <Position X="23.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAAAAAAAAACAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Repository\EstadoNutricional.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Cencinai.Logic.Repository.NiñoRepo" BaseTypeListCollapsed="true">
+    <Position X="25.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACgAAAAAAQIAAAAABABAACAQAAAAAAAAAAAAAQAAEA=</HashCode>
+      <FileName>Repository\NiñoRepo.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Cencinai.Logic.Repository.NivelDesarrolloRepo" BaseTypeListCollapsed="true">
+    <Position X="19.5" Y="7.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAAAAAAAAACAAAAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>Repository\NivelDesarrolloRepo.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Cencinai.Logic.Repository.ProvinciaRepo" BaseTypeListCollapsed="true">
+    <Position X="23.5" Y="7.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAAAAAAAAACAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repository\ProvinciaRepo.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Cencinai.Logic.Repository.ResponsableRepo" BaseTypeListCollapsed="true">
+    <Position X="25.5" Y="7.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAQCAQAAAgAIAAAQAAAAAAKAIAAQAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Repository\ResponsableRepo.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Cencinai.Logic.Repository.UsuarioRepo" BaseTypeListCollapsed="true">
+    <Position X="19.5" Y="9.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAAAIQAACACQQAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repository\UsuarioRepo.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="Cencinai.Logic.Repository.Interface.ICantonRepo">
+    <Position X="19.5" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>Repository\Interface\ICantonRepo.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Cencinai.Logic.Repository.Interface.ICategoriaRepo">
+    <Position X="21.5" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repository\Interface\ICategoriaRepo.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Cencinai.Logic.Repository.Interface.IDistritoRepo">
+    <Position X="23.25" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Repository\Interface\IDistritoRepo.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Cencinai.Logic.Repository.Interface.IEstadoNutricionalRepo">
+    <Position X="25" Y="13.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Repository\Interface\IEstadoNutricionalRepo.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Cencinai.Logic.Repository.Interface.INiñoRepo">
+    <Position X="19.5" Y="15" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAQAAAAAABAAAAAAQAAAAAAAAAAAAAQAAEA=</HashCode>
+      <FileName>Repository\Interface\INiñoRepo.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Cencinai.Logic.Repository.Interface.INivelDesarrolloRepo">
+    <Position X="21.25" Y="15" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>Repository\Interface\INivelDesarrolloRepo.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Cencinai.Logic.Repository.Interface.IProvinciaRepo">
+    <Position X="23.25" Y="15" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repository\Interface\IProvinciaRepo.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Cencinai.Logic.Repository.Interface.IResponsableRepo">
+    <Position X="25.25" Y="15" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAgAAAAAAAAAAAAIAIAAQAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Repository\Interface\IResponsableRepo.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Cencinai.Logic.Repository.Interface.IUsuarioRepo">
+    <Position X="21.25" Y="16.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIQAACAAQQAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repository\Interface\IUsuarioRepo.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

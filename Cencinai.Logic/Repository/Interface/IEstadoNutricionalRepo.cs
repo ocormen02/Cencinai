@@ -10,5 +10,7 @@ namespace Cencinai.Logic.Repository.Interface
     public interface IEstadoNutricionalRepo
     {
         void AgregarEstadoNutricional(EstadoNutricionalModel estadoNutricional);
+
+        Task<IList<EstadoNutricionalModel>> ObtenerReporteEstadoNutricional();
     }
 }

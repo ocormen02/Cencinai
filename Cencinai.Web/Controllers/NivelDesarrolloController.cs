@@ -6,12 +6,14 @@ using Cencinai.Logic.Models;
 using Cencinai.Logic.Repository.Interface;
 using Cencinai.Web.Enum;
 using Cencinai.Web.Helper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 
 
 namespace Cencinai.Web.Controllers
 {
+    [Authorize]
     public class NivelDesarrolloController : BaseController
     {
         #region Constructor

@@ -10,5 +10,7 @@ namespace Cencinai.Logic.Repository.Interface
     public interface INivelDesarrolloRepo
     {
         void AgregarNivelDesarrollo(NivelDesarrolloModel nivelDesarrollo);
+
+        Task<IList<NivelDesarrolloModel>> ObtenerReporteNivelDesarrollo();
     }
 }

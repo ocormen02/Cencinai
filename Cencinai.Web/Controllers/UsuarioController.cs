@@ -6,10 +6,12 @@ using Cencinai.Logic.Helper;
 using Cencinai.Logic.Models;
 using Cencinai.Logic.Repository.Interface;
 using Cencinai.Web.Enum;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Cencinai.Web.Controllers
 {
+    [Authorize]
     public class UsuarioController : BaseController
     {
         #region Constructor

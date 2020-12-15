@@ -30,6 +30,17 @@ namespace Cencinai.Logic.Repository
 
         public void AgregarEstadoNutricional(EstadoNutricionalModel estadoNutricional)
         {
+            var estados = unitOfWork.EstadoNutricional.GetAll(null,null,null).Result.Where(x => x.NiñoId == estadoNutricional.NiñoId).ToList();
+           
+            if(estados.Count > 0)
+            {
+                foreach (var item in estados)
+                {
+                    unitOfWork.EstadoNutricional.Remove(item);
+                }
+                unitOfWork.Complete();
+            }
+
             var entidadEstadoNutricional = mapper.Map<EstadoNutricional>(estadoNutricional);
             entidadEstadoNutricional.Niño = null;
             entidadEstadoNutricional.FechaCreacion = DateTime.Now;
@@ -41,7 +52,7 @@ namespace Cencinai.Logic.Repository
         public async Task<IList<EstadoNutricionalModel>> ObtenerReporteEstadoNutricional()
         {
             var listaEstadoNutricional = await unitOfWork.EstadoNutricional.GetAll(
-                null, x => x.OrderByDescending(o => o.FechaCreacion), 
+                null, null, 
                 CrearNiñoInclude(), CrearResponsableInclude());
 
             return mapper.Map<IList<EstadoNutricionalModel>>(listaEstadoNutricional);

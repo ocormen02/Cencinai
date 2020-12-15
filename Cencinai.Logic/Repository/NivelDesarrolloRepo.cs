@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
 using Cencinai.Logic.Helper;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Query;
 
 namespace Cencinai.Logic.Repository
 {
@@ -28,6 +30,17 @@ namespace Cencinai.Logic.Repository
 
         public void AgregarNivelDesarrollo(NivelDesarrolloModel nivelDesarrollo)
         {
+            var niveles = unitOfWork.NivelDesarrollo.GetAll(null, null, null).Result.Where(x => x.NiñoId == nivelDesarrollo.NiñoId).ToList();
+
+            if (niveles.Count > 0)
+            {
+                foreach (var item in niveles)
+                {
+                    unitOfWork.NivelDesarrollo.Remove(item);
+                }
+                unitOfWork.Complete();
+            }
+
             nivelDesarrollo.Id = 0;
             var entidadNivelDesarrollo = mapper.Map<NivelDesarrollo>(nivelDesarrollo);
             entidadNivelDesarrollo.Niño = null;
@@ -36,5 +49,26 @@ namespace Cencinai.Logic.Repository
             
             unitOfWork.Complete();
         }
+
+        public async Task<IList<NivelDesarrolloModel>> ObtenerReporteNivelDesarrollo()
+        {
+            var listaEstadoNutricional = await unitOfWork.NivelDesarrollo.GetAll(
+                null, null,
+                CrearNiñoInclude(), CrearResponsableInclude());
+
+            return mapper.Map<IList<NivelDesarrolloModel>>(listaEstadoNutricional);
+        }
+
+
+        #region Includes
+        public Func<IQueryable<NivelDesarrollo>, IIncludableQueryable<NivelDesarrollo, object>> CrearNiñoInclude()
+        {
+            return niño => niño.Include(x => x.Niño);
+        }
+        public Func<IQueryable<NivelDesarrollo>, IIncludableQueryable<NivelDesarrollo, object>> CrearResponsableInclude()
+        {
+            return responsable => responsable.Include(x => x.Niño.Responsable);
+        }
+        #endregion
     }
 }

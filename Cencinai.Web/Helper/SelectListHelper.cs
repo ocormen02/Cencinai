@@ -142,5 +142,22 @@ namespace Cencinai.Web.Helper
 
             return selectList;
         }
+
+        public static List<SelectListItem> ObtenerOpcionesReportes()
+        {
+            List<SelectListItem> selectList = new List<SelectListItem>();
+            selectList.Add(new SelectListItem
+            {
+                Text = "Estado Nutricional",
+                Value = "EstadoNutricional"
+            });
+            selectList.Add(new SelectListItem
+            {
+                Text = "Nivel Desarrollo",
+                Value = "NivelDesarrollo"
+            });
+
+            return selectList;
+        }
     }
 }

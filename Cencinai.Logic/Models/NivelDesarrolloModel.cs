@@ -29,5 +29,7 @@ namespace Cencinai.Logic.Models
         public DateTime FechaCreacion { get; set; }
 
         public DateTime? FechaActualizacion { get; set; }
+
+        public virtual NiñoModel Niño { get; set; }
     }
 }

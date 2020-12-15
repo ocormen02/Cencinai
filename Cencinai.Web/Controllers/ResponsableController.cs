@@ -2,10 +2,13 @@
 using Cencinai.Logic.Repository.Interface;
 using Cencinai.Web.Enum;
 using Cencinai.Web.Helper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace Cencinai.Web.Controllers
 {
+    [Authorize]
     public class ResponsableController : BaseController
     {
         #region Constructor
@@ -79,6 +82,14 @@ namespace Cencinai.Web.Controllers
                 }
                 else
                 {
+                    var provincias = provinciaRepo.ObtenerProvincias().Result;
+                    var cantones = cantonRepo.ObtenerCantones(2).Result;
+                    var distritos = distritoRepo.ObtenerDistritos(4).Result;
+
+                    ViewBag.provincias = SelectListHelper.ObtenerListaProvincia(provincias);
+                    ViewBag.cantones = SelectListHelper.ObtenerListaCanton(cantones);
+                    ViewBag.distritos = SelectListHelper.ObtenerListaDistrito(distritos);
+
                     return View();
                 }
             }

@@ -1,0 +1,30 @@
+﻿@model Cencinai.Logic.Models.ReporteModel
+@{
+    ViewData["Title"] = "Niños";
+}
+
+<link rel="stylesheet" href="~/css/cencinai.css" />
+<ol class="breadcrumb">
+    <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index" onclick="displayBusyIndicator()">Menú</a></li>
+    <li class="breadcrumb-item active">Reportes</li>
+</ol>
+<h4>Reportes</h4>
+<hr />
+<div class="container">
+    <form asp-action="Index">
+        <div class="row">
+            <div class="col-4">
+                <div class="form-group">
+                    <label>Reporte</label>
+                    <select class="form-control" asp-for="TipoReporte" asp-items="ViewBag.tipoReporte">
+                        <option>Seleccione Reporte</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-4 buttonReport">
+                <br/>
+                <input class="btn btn-info" type="submit" value="Generar" onclick="displayBusyIndicator()" />
+            </div>
+        </div>
+    </form>
+</div>

@@ -27,6 +27,7 @@ namespace Cencinai.Logic.Models
         [Display(Name = "Distrito")]
         public int DistritoId { get; set; }
 
+        [Required(ErrorMessage = "Campo Requerido")]
         [Display(Name = "Dirección Exacta")]
         public string DireccionExacta { get; set; }
 

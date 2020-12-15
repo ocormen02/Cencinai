@@ -2,11 +2,13 @@
 using Cencinai.Logic.Repository.Interface;
 using Cencinai.Web.Enum;
 using Cencinai.Web.Helper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 
 namespace Cencinai.Web.Controllers
 {
+    [Authorize]
     public class NiñoController : BaseController
     {
         #region Constructor

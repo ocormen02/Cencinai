@@ -1,2 +1,7 @@
-# Cencinai
-Areas de desarrollo y nutrición Cencinai
+# .NET Core
+# EF Core
+# Repository Pattern
+# Unit of Work
+# MVC
+# Bootstrap
+
